@@ -2,7 +2,7 @@ import React from 'react'
 
 const TenderCreate = () => {
   return (
-    <div>TenderCreate1</div>
+    <div>TenderCreate12</div>
   )
 }
 
