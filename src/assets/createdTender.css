@@ -1,0 +1,58 @@
+.tenderTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tenderTable thead {
+    background: linear-gradient(#3160D0, #223567);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+}
+
+.tenderTable th,
+.tenderTable td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.tenderTable th {
+    font-size: 14px;
+}
+
+.tenderTable tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+.tenderTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tenderTable tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.tenderTable tbody tr td {
+    font-size: 15px;
+    color: #333;
+}
+
+
+
+.tenderTable tbody tr td:first-child {
+    font-weight: 500;
+}
+
+.tenderTable tbody tr td:last-child {
+    font-weight: 600;
+    color:#223567 ;
+}
+ 
