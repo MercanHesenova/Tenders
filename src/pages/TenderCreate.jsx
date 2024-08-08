@@ -18,17 +18,17 @@ const TenderCreate = () => {
     onSubmit: async (values) => {
       try {
         const response = await axios.get(tendersUrl)
-        const tendersRes = response.data
+        const tendersRes = response.data ? response.data : []
 
         const isSubject = tendersRes.some(tender => tender.subject == values.subject)
         if (!isSubject) {
-        await axios.post(tendersUrl, values)
-        }  
+          await axios.post(tendersUrl, values)
+        }
       } catch (error) {
         console.log(error);
 
       }
-      
+
     },
     validationSchema: TenderCreateSchema
   })

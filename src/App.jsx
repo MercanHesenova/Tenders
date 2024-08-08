@@ -8,20 +8,16 @@ import Home from './pages/Home';
 import TenderDetail from './pages/TenderDetail';
 import TenderApply from './pages/TenderApply';
 import TenderCreate from './pages/TenderCreate';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
 function App() {
 
   return (
     <Context.Provider >
       <Header></Header>
       <Routes>
-        <Route path='/' element={<Home/>}></Route>
+      <Route path='/' element={<Home/>}></Route>
         <Route path='/tender-detail/:id' element={<TenderDetail/>}></Route>
         <Route path='/tender-apply/:id' element={<TenderApply/>}></Route>
         <Route path='/tender-create' element={<TenderCreate/>}></Route>
-        <Route path='/sign-in' element={<SignIn/>}></Route>
-        <Route path='/sign-up' element={<SignUp/>}></Route>
       </Routes>
     </Context.Provider>
   )
