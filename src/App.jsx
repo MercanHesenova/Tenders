@@ -9,6 +9,8 @@ import TenderDetail from './pages/TenderDetail';
 import TenderApply from './pages/TenderApply';
 import TenderCreate from './pages/TenderCreate';
 import CreatedTenders from './pages/CreatedTenders';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 function App() {
 
   return (
