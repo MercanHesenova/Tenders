@@ -8,17 +8,17 @@ import Home from './pages/Home';
 import TenderDetail from './pages/TenderDetail';
 import TenderApply from './pages/TenderApply';
 import TenderCreate from './pages/TenderCreate';
+import CreatedTenders from './pages/CreatedTenders';
 function App() {
 
   return (
     <Context.Provider>
       <Header></Header>
-      <TenderCreate/>
       <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/tender-detail/:id' element={<TenderDetail/>}></Route>
-        <Route path='/tender-apply/:id' element={<TenderApply/>}></Route>
-        <Route path='/tender-create' element={<TenderCreate/>}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/tender-detail/:id' element={<TenderDetail />}></Route>
+        <Route path='/tender-apply/:id' element={<TenderApply />}></Route>
+        <Route path='/tender-create' element={<TenderCreate />}></Route>
       </Routes>
     </Context.Provider>
   )
