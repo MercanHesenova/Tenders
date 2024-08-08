@@ -79,8 +79,7 @@
   }
   
   .home-image>img {
-    width: 754px;
-    height: 600px;
+    width: 100%;
   }
   
   .intro-info {
