@@ -29,7 +29,7 @@ const SignIn = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">Passwords</label>
                         <input
                         placeholder='Enter your password'
                             type="password"
