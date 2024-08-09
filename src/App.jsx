@@ -11,6 +11,7 @@ import TenderCreate from './pages/TenderCreate';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import CreatedTenders from './pages/CreatedTenders';
+import Footer from './components/Footer';
 function App() {
 
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/sign-in' element={<SignIn/>}></Route>
         <Route path='/sign-up' element={<SignUp/>}></Route>
       </Routes>
+      <Footer></Footer>
     </Context.Provider>
   )
 }
