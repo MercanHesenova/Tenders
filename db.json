@@ -1,7 +1,23 @@
 {
-    "tenders":[
-        {
-            
-        }
-    ]
+  "tenders": [
+    {
+      "id": "5656"
+    },
+    {
+      "id": "7f1e",
+      "owner": "asd",
+      "subject": "asdas",
+      "endDate": "2024-08-09",
+      "address": "asd",
+      "estimatedCost": 23432
+    },
+    {
+      "id": "8c91",
+      "owner": "asd",
+      "subject": "asdasaa",
+      "endDate": "2024-08-09",
+      "address": "asd",
+      "estimatedCost": 23432
+    }
+  ]
 }
