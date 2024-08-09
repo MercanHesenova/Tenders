@@ -8,8 +8,8 @@ import Home from './pages/Home';
 import TenderDetail from './pages/TenderDetail';
 import TenderApply from './pages/TenderApply';
 import TenderCreate from './pages/TenderCreate';
-import SignUp from './pages/SignUp';
-import SignIn from './pages/SignIn';
+// import SignUp from './pages/SignUp';
+// import SignIn from './pages/SignIn';
 function App() {
 
   return (
