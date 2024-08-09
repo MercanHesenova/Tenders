@@ -14,12 +14,14 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: bold;
+    min-width: 800px;
 }
 
 .tenderTable th,
 .tenderTable td {
     padding: 12px 15px;
     text-align: left;
+
 }
 
 .tenderTable th {
@@ -53,6 +55,86 @@
 
 .tenderTable tbody tr td:last-child {
     font-weight: 600;
-    color:#223567 ;
+    color: #223567;
 }
- 
+
+.tenderTable button {
+    margin: 5px 0;
+}
+
+.modalİnput input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+@media(max-width:641px) {
+    .tenderTable tbody tr td {
+        font-size: 10px;
+    }
+    .tenderBody th{
+        font-size: 10px;
+    }
+    .tenderBody button{
+        padding: 5px;
+    }
+}
+@media(max-width:396px) {
+    .tenderTable tbody tr td {
+        font-size: 8px !important;
+    }
+    .tenderBody th{
+        font-size: 8px !important;
+    }
+    .tenderBody button{
+        padding: 5px;
+    }
+    .tenderTable th{
+        font-size: 10px !important;
+    }
+}
+
+@media(max-width:457px) {
+
+    .tenderTable th,
+    .tenderTable td {
+        padding: 1px 2px;
+    }
+
+    .tenderTable th {
+        font-size: 10px;
+    }
+
+    .tenderTable td {
+        font-size: 9px !important;
+    }
+
+    .tenderTable button {
+        padding: 3px;
+        font-size: 10px;
+    }
+}
+
+@media(max-width:564px) {
+
+    .tenderTable th,
+    .tenderTable td {
+        padding: 2px 3px;
+    }
+
+    .tenderTable th {
+        font-size: 12px;
+    }
+
+    .tenderTable td {
+        font-size: 11px !important;
+    }
+
+    .tenderTable button {
+        padding: 4px;
+        font-size: 11px;
+    }
+}

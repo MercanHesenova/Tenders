@@ -1,34 +1,23 @@
 {
   "tenders": [
     {
-      "id": "5656"
+      "id": "a4c3",
+      "owner": "AZƏRBAYCAN RESPUBLİKASININ KƏND TƏSƏRRÜFATI NAZİRLİYİ YANINDA AQRAR XİDMƏTLƏR AGENTLİYİ",
+      "subject": "Aqrar Xidmətlər Agentliyinin tabeliyində olan Heyvan Sağlamlığı və Baytarlıq Xidmətləri Mərkəzi üçün heyvanların profilaktik peyvəndləmə tədbirlərinin icrası məqsədilə peyvənd vasitələrinin satınalınması",
+      "endDate": "2024-07-31",
+      "address": "Bakı şəhəri, Nərimanov rayonu, Nəcəf Nərimanov küçəsi 7A",
+      "estimatedCost": 12233
     },
     {
-      "id": "7f1e",
-      "owner": "asd",
-      "subject": "asdas",
-      "endDate": "2024-08-09",
-      "address": "asd",
-      "estimatedCost": 23432
+      "id": "a9c2",
+      "owner": "AZƏRBAYCAN RESPUBLİKASININ KƏND TƏSƏRRÜFATI NAZİRLİYİ YANINDA AQRAR XİDMƏTLƏR AGENTLİYİ",
+      "subject": "Aqrar Xidmətlər Agentliyinin tabeliyində olan Heyvan Sağlamlığı və Baytarlıq Xidmətləri Mərkəzi üçün heyvanların profilaktik peyvəndləmə tədbirlərinin icrası məqsədilə peyvənd vasitələrinin satınalınması",
+      "endDate": "2024-07-31",
+      "address": "Bakı şəhəri, Nərimanov rayonu, Nəcəf Nərimanov küçəsi 7A",
+      "estimatedCost": 12233
     },
     {
-      "id": "8c91",
-      "owner": "asd",
-      "subject": "asdasaa",
-      "endDate": "2024-08-09",
-      "address": "asd",
-      "estimatedCost": 23432
-    },
-    {
-      "id": "df5f",
-      "owner": "sdfsd",
-      "subject": "asfas",
-      "endDate": "2024-08-14",
-      "address": "dafds",
-      "estimatedCost": 32421
-    },
-    {
-      "id": "a9c3",
+      "id": "v9c3",
       "owner": "AZƏRBAYCAN RESPUBLİKASININ KƏND TƏSƏRRÜFATI NAZİRLİYİ YANINDA AQRAR XİDMƏTLƏR AGENTLİYİ",
       "subject": "Aqrar Xidmətlər Agentliyinin tabeliyində olan Heyvan Sağlamlığı və Baytarlıq Xidmətləri Mərkəzi üçün heyvanların profilaktik peyvəndləmə tədbirlərinin icrası məqsədilə peyvənd vasitələrinin satınalınması",
       "endDate": "2024-07-31",
