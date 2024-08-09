@@ -1,5 +1,5 @@
 /* src/LoginPage.css */
-body {
+/* body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
@@ -7,7 +7,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #f0f0f0;
-}
+} */
 
 .login-container {
     display: flex;

@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import React ,{ useState, useEffect }from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
-import './SignUp.css';
+import '../assets/signUp.css';
 
 
 const SignupSchema = Yup.object().shape({
@@ -58,7 +58,7 @@ const SignUp = () => {
 
   return (
     <>
-      <div className='container'>
+      <div className='signupCont'>
         <div className='title'>Sign Up</div>
         <form onSubmit={handleSubmit}>
           <div className='user-details'>
