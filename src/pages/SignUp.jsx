@@ -58,6 +58,7 @@ const SignUp = () => {
 
   return (
     <>
+    <div className='body'>
       <div className='signupCont'>
         <div className='title'>Sign Up</div>
         <form onSubmit={handleSubmit}>
@@ -104,6 +105,7 @@ const SignUp = () => {
           </div>
         </form>
 
+      </div>
       </div>
     </>
   )
