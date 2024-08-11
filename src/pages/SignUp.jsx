@@ -35,7 +35,7 @@ const SignUp = () => {
   }, []);
 
 
-  const { values, handleChange, errors, handleSubmit, touched } = useFormik({
+  const { values, handleChange, errors, handleSubmit, touched, setErrors } = useFormik({
     initialValues: {
       name: '',
       surname: '',
@@ -46,20 +46,35 @@ const SignUp = () => {
     },
     validationSchema: SignupSchema,
     onSubmit: (values, actions) => {
+
+      const existingUser = signupData.find(user =>
+        user.email === values.email || user.number === values.number
+      );
+
+      if (existingUser) {
+        if (existingUser.email === values.email) {
+          setErrors({ email: 'This email is already used' });
+        }
+        if (existingUser.number === values.number) {
+          setErrors({ number: 'This phone number is already used' });
+        }
+        return;
+      }
+
       const newSignUpData = [...signupData, values]
       localStorage.setItem('signupData', JSON.stringify(newSignUpData));
       setSignupData(newSignUpData)
 
       actions.resetForm();
 
-      navigate('/signIn')
+      navigate('/sign-in')
     },
   });
 
   return (
     <>
     <div className='body'>
-      <div className='signupCont'>
+      <div className='signUpContainer'>
         <div className='title'>Sign Up</div>
         <form onSubmit={handleSubmit}>
           <div className='user-details'>
