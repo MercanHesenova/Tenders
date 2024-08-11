@@ -155,8 +155,8 @@ const CreatedTenders = () => {
                             <td>{item.estimatedCost}</td>
                             <td>{item.endDate}</td>
                             <td>
-                                <button onClick={() => handleShow(item)}>Edit</button>
-                                <button onClick={() => deleteTender(item.id)}>Delete</button>
+                                <button className='editButton' onClick={() => handleShow(item)}>Edit</button>
+                                <button className='deleteButton' onClick={() => deleteTender(item.id)}>Delete</button>
                             </td>
                         </tr>
                     ))}
