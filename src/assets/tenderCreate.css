@@ -1,7 +1,6 @@
 .tenderCreateParent {
     background: linear-gradient(#3160D0, #223567);
-      /* clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 100%); */
-}
+ }
 
 .tenderCreateParent {
     display: flex;
@@ -29,6 +28,10 @@
     font-weight: bold;
     text-align: center;
     font-size: 24px;
+    text-transform: uppercase;
+  }
+  .tenderCreateForm p:hover {
+    color: #0056b3;
   }
   .tenderCreateForm label {
     display: block;
@@ -55,6 +58,7 @@
     background-color: #007bff;
     color: white;
     padding: 10px 15px;
+    width: 100%;
     border: none;
     border-radius: 4px;
     cursor: pointer;

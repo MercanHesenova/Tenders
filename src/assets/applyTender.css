@@ -1,0 +1,98 @@
+.applyParent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: #f4f4f9;
+    text-transform: capitalize;
+    background: linear-gradient(#3160D0, #223567);
+}
+
+.applyForm {
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    margin: 100px 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.applyForm p {
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.applyForm p:hover {
+  color: #0056b3;
+}
+.applyForm:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+ 
+
+.form-group textarea,
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.form-group textarea:hover,
+.form-group input:hover {
+    border-color: #007bff;
+    outline: none;
+    background-color: #ffffff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.applyButton {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.applyButton:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .applyForm {
+        padding: 20px;
+    }
+
+    .applyButton {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
