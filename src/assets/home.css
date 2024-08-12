@@ -127,8 +127,11 @@
 
 .currency-icon {
   font-size: 1.2rem;
-  color: #007bff;
+  color: #206fc9;
   /* Adjust color as needed */
+}
+.tender-text{
+  color: #206fc9;
 }
 
 .blue-shadow {

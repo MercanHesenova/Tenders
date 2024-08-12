@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../assets/home.css'
-import TenderList from '../components/TenderList'
+import Tenders from '../components/Tenders'
 const Home = () => {
   return (
     <>
@@ -22,7 +22,7 @@ const Home = () => {
           </Col>
         </Row>
         <hr />
-        <TenderList></TenderList>
+        <Tenders></Tenders>
       </Container>
       <section className='started-now mt-5'>
         <div className="started-text ">
