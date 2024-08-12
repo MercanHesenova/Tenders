@@ -55,3 +55,17 @@ footer .copyright {
 footer > hr{
     width: 80%;
 }
+
+/* Responsive design*/
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+
+    .footer-content div {
+        flex: 1;
+        margin: 0 10px;
+    }
+}

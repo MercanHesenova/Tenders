@@ -148,12 +148,12 @@ const CreatedTenders = () => {
                 </thead>
                 <tbody className="tenderBody">
                     {createdTenders.map((item) => (
-                        <tr key={item.id}>
-                            <td>{item.owner}</td>
-                            <th>{item.subject}</th>
-                            <td>{item.address}</td>
-                            <td>{item.estimatedCost}</td>
-                            <td>{item.endDate}</td>
+                        <tr key={item?.id}>
+                            <td>{item?.owner}</td>
+                            <th>{item?.subject}</th>
+                            <td>{item?.address}</td>
+                            <td>{item?.estimatedCost}</td>
+                            <td>{item?.endDate}</td>
                             <td>
                                 <button className='editButton' onClick={() => handleShow(item)}>Edit</button>
                                 <button className='deleteButton' onClick={() => deleteTender(item.id)}>Delete</button>

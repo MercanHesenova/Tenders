@@ -1,36 +1,30 @@
 {
   "tenders": [
     {
-      "id": "a4c3",
-      "owner": "AZƏRBAYCAN RESPUBLİKASININ KƏND TƏSƏRRÜFATI NAZİRLİYİ YANINDA AQRAR XİDMƏTLƏR AGENTLİYİ",
-      "subject": "Aqrar Xidmətlər Agentliyinin tabeliyində olan Heyvan Sağlamlığı və Baytarlıq Xidmətləri Mərkəzi üçün heyvanların profilaktik peyvəndləmə tədbirlərinin icrası məqsədilə peyvənd vasitələrinin satınalınması",
-      "endDate": "2024-08-11",
-      "address": "Bakı şəhəri, Nərimanov rayonu, Nəcəf Nərimanov küçəsi 7A",
-      "estimatedCost": 12233
+      "id": "a119",
+      "owner": "sdfvdc",
+      "subject": "ddddddd",
+      "endDate": "2024-08-24",
+      "address": "Bakı şəhəri Biləcəri qəsəbəsi",
+      "estimatedCost": 1555
     },
     {
-      "id": "v9g3",
-      "owner": "AZƏRBAYCAN RESPUBLİKASININ KƏND TƏSƏRRÜFATI NAZİRLİYİ YANINDA AQRAR XİDMƏTLƏR AGENTLİYİ",
-      "subject": "Aqrar Xidmətlər Agentliyinin tabeliyində olan Heyvan Sağlamlığı və Baytarlıq Xidmətləri Mərkəzi üçün heyvanların profilaktik peyvəndləmə tədbirlərinin icrası məqsədilə peyvənd vasitələrinin satınalınması",
-      "endDate": "2024-08-11",
-      "address": "Bakı şəhəri, Nərimanov rayonu, Nəcəf Nərimanov küçəsi 7A",
-      "estimatedCost": 12233
+      "id": "8121",
+      "owner": "Marcan",
+      "subject": "50-ci sualda bir neçə düzgün cavab vardı",
+      "endDate": "2024-08-30",
+      "address": "Bakı şəhəri Biləcəri qəsəbəsi",
+      "estimatedCost": 80000,
+      "createdDate": "12/08/2024"
     },
     {
-      "id": "v0c3",
-      "owner": "AZƏRBAYCAN RESPUBLİKASININ KƏND TƏSƏRRÜFATI NAZİRLİYİ YANINDA AQRAR XİDMƏTLƏR AGENTLİYİ",
-      "subject": "Aqrar Xidmətlər Agentliyinin tabeliyində olan Heyvan Sağlamlığı və Baytarlıq Xidmətləri Mərkəzi üçün heyvanların profilaktik peyvəndləmə tədbirlərinin icrası məqsədilə peyvənd vasitələrinin satınalınması",
-      "endDate": "2024-08-11",
-      "address": "Bakı şəhəri, Nərimanov rayonu, Nəcəf Nərimanov küçəsi 7A",
-      "estimatedCost": 12233
-    },
-    {
-      "id": "v9c1",
-      "owner": "AZƏRBAYCAN RESPUBLİKASININ KƏND TƏSƏRRÜFATI NAZİRLİYİ YANINDA AQRAR XİDMƏTLƏR AGENTLİYİ",
-      "subject": "Aqrar Xidmətlər Agentliyinin tabeliyində olan Heyvan Sağlamlığı və Baytarlıq Xidmətləri Mərkəzi üçün heyvanların profilaktik peyvəndləmə tədbirlərinin icrası məqsədilə peyvənd vasitələrinin satınalınması",
-      "endDate": "2024-08-11",
-      "address": "Bakı şəhəri, Nərimanov rayonu, Nəcəf Nərimanov küçəsi 7A",
-      "estimatedCost": 12233
+      "id": "b893",
+      "owner": "Marcana",
+      "subject": "1 sualda tam düzgün, dolğun cavab götürülməmişdir",
+      "endDate": "2024-08-15",
+      "address": "Bakı şəhəri Biləcəri qəsəbəsi",
+      "estimatedCost": 89000,
+      "createdDate": "12/08/2024"
     }
   ]
 }
