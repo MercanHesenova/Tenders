@@ -175,3 +175,8 @@
         font-size: 11px;
     }
 }
+@media(min-width:1199px){
+    .editButton{
+        margin-right: 5px !important;
+    }
+}
