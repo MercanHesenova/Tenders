@@ -13,6 +13,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import CreatedTenders from './pages/CreatedTenders';
 import Footer from './components/Footer';
+import Applied from './pages/Applied';
 
 function App() {
   const tendersUrl = import.meta.env.VITE_TENDERS
