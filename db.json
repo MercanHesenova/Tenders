@@ -1,23 +1,6 @@
 {
   "tenders": [
     {
-      "id": "a119",
-      "owner": "sdfvdc",
-      "subject": "ddddddd",
-      "endDate": "2024-08-24",
-      "address": "Bakı şəhəri Biləcəri qəsəbəsi",
-      "estimatedCost": 1555
-    },
-    {
-      "id": "8121",
-      "owner": "Marcan",
-      "subject": "50-ci sualda bir neçə düzgün cavab vardı",
-      "endDate": "2024-08-30",
-      "address": "Bakı şəhəri Biləcəri qəsəbəsi",
-      "estimatedCost": 80000,
-      "createdDate": "12/08/2024"
-    },
-    {
       "id": "b893",
       "owner": "Marcana",
       "subject": "1 sualda tam düzgün, dolğun cavab götürülməmişdir",
