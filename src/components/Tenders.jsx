@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'; 
 import { Form, Container, Button } from 'react-bootstrap';
 import Tender from './Tender';
-import Context from '../context/Context';
+import {Context} from '../context/Context';
 const Tenders = () => {
-  const {tenders} = useContext(Context)
+  const tenders = useContext(Context)
+  
   return (
     <>
       <Container className='mt-5'>
@@ -16,8 +17,8 @@ const Tenders = () => {
           // onChange={(e) => setSearchTerm(e.target.value)}
           />
         </Form>
-        {
-          tenders.map((tender) =>(
+        {         
+          tenders?.map((tender) =>(
             <div key={tender?.id}>
               <Tender  tender={tender}/>
             </div>

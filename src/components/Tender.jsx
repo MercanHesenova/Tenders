@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Tender = ({tender}) => {
   console.log(tender);
-  let date = tender.endDate.split('-').reverse().join('/')
+  let date = tender?.endDate.split('-').reverse().join('/')
 
   return (
       <Card className="p-3 mb-3  blue-shadow">
@@ -37,7 +37,7 @@ const Tender = ({tender}) => {
             </div>
             <div className="text-muted mt-1">
               <small>
-              <i class="bi bi-caret-right"></i> Ətraflı
+              <i className="bi bi-caret-right"></i> Ətraflı
               </small>
             </div>
           </Col>

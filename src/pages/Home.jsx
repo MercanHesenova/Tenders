@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../assets/home.css'
 import Tenders from '../components/Tenders'
+import DataProvider from '../context/Context'
 const Home = () => {
   return (
     <>
@@ -22,13 +23,15 @@ const Home = () => {
           </Col>
         </Row>
         <hr />
-        <Tenders></Tenders>
+        <DataProvider>
+          <Tenders></Tenders>
+        </DataProvider>
       </Container>
       <section className='started-now mt-5'>
         <div className="started-text ">
-            <h2 className=''>Ready to get started ?</h2>
-            <p className=''>Explore ttender, or create an account instantly and place a tender. You can also contact us for assistance!</p>
-            <button className='btn btn-outline-light'> Start now</button>
+          <h2 className=''>Ready to get started ?</h2>
+          <p className=''>Explore ttender, or create an account instantly and place a tender. You can also contact us for assistance!</p>
+          <button className='btn btn-outline-light'> Start now</button>
         </div>
       </section>
     </>
