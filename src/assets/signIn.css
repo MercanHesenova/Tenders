@@ -22,6 +22,10 @@
     color: #2475e7;
 }
 
+.login-paraghraph{
+    text-align: center;
+}
+
 .wrapper .input-box{
    width: 100%;
    height: 50px;
@@ -93,8 +97,8 @@ form .loginBtn{
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
 }
 .loginBtn button:hover{
     background: linear-gradient(-135deg, #003580, #00a6ff);   
@@ -103,7 +107,7 @@ form .loginBtn{
 .wrapper .register-link{
     font-size: 14.5px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .register-link a {
@@ -132,7 +136,7 @@ form .loginBtn{
 }
 
 .modal {
-    display: flex;
+    display: none; 
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -144,57 +148,63 @@ form .loginBtn{
     z-index: 1000;
 }
 
-.modal h2{
-    font-size: 25px;
-    font-weight: 500;
-    text-align: center;
-    color: #2475e7; 
+.modal.show {
+    display: flex; 
 }
 
-.modal input{
-    height: 45px;
+
+.modal h2 {
+    font-size: 22px; 
+    font-weight: 500;
+    text-align: center;
+    color: #2475e7;
+    margin-top: 0;
+}
+
+.modal input {
+    height: 40px; 
     width: 100%;
-    margin-top: 20px;
+    margin-top: 15px;
     outline: none;
-    border-radius: 40px;
+    border-radius: 20px; 
     border: 1px solid #ccc;
     padding-left: 15px;
-    font-size: 16px;
+    font-size: 14px; 
     border-bottom-width: 2px;
 }
 
-form .modalBtn{
-    height: 45px;
+form .modalBtn {
     text-align: center;
-    margin-left: 40px;
 }
 
 .modal button {
-    height: 90%;
+    height: 40px;
     width: 70%;
     outline: none;
-    color: #ffff;
+    color: #fff;
     background: linear-gradient(135deg, #003580, #00a6ff);
     border: none;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 16px; 
     font-weight: 500;
     cursor: pointer;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 50px;
 }
 
-.modal button:hover{
-    background: linear-gradient(-135deg, #003580, #00a6ff);   
+.modal button:hover {
+    background: linear-gradient(-135deg, #003580, #00a6ff);
 }
 
 .modal-content {
     background: white;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 8px; /* Daha yuvarlak köşeler */
     position: relative;
-    width: 300px;
+    width: 90%; /* Genişlik ayarı */
+    max-width: 400px; /* Maksimum genişlik */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box; /* Padding ve border’ı genişlik ve yüksekliğe dahil et */
 }
 
 .close {

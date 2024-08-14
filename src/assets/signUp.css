@@ -33,7 +33,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 20px 0 12px 0;
+    /* margin: 20px 0 12px 0; */
 }
 
 form .user-details .input-wrapper{
@@ -84,6 +84,38 @@ form .button{
 
 .button button:hover{
     background: linear-gradient(-135deg, #003580, #00a6ff);  
+}
+
+.body .login-link{
+    font-size: 14.5px;
+    text-align: center;
+    /* margin-top: 5px; */
+    
+}
+
+.login-link a {
+    position: relative;
+    text-decoration: none;
+    color: black; 
+    font-weight: 600;
+}
+
+.login-link a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #2475e7; 
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.login-link a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 @media(max-width: 584px) {
