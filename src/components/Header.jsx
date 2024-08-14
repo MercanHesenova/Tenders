@@ -40,7 +40,7 @@ const Header = () => {
                   <Nav.Link as={Link} to="/tender-create">Tender Create</Nav.Link>
                   <Nav.Link as={Link} to="/created-tender">Created Tender List</Nav.Link>
                   <Nav.Link className='text-muted'>{userName}</Nav.Link>
-                  <Nav.Link onClick={logOut}>Logout</Nav.Link>
+                  <Nav onClick={logOut} className="btn btn-outline-primary signup-btn" >Log out</Nav>
                 </>
               ) : (
                 <>
