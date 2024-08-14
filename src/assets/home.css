@@ -130,7 +130,8 @@
   color: #206fc9;
   /* Adjust color as needed */
 }
-.tender-text{
+
+.tender-text {
   color: #206fc9;
 }
 
@@ -163,8 +164,8 @@ hr {
 }
 
 .search {
-  border-radius: 500px!important;
-  width: 50%!important;
+  border-radius: 500px !important;
+  width: 50% !important;
   margin: auto;
   box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
 }
@@ -172,30 +173,83 @@ hr {
 .started-now {
   background: #0A2E57;
   margin: 0;
-  padding: 20em 20px; /* Üst və alt üçün padding əlavə edilir */
+  padding: 20em 20px;
+  /* Üst və alt üçün padding əlavə edilir */
   min-height: 100vh;
   clip-path: polygon(0 30%, 100% 0, 100% 70%, 0 100%);
 }
 
 .started-text {
   display: flex;
-  flex-direction: column; /* Mətni sütun şəklində sıralamaq üçün */
+  flex-direction: column;
+  /* Mətni sütun şəklində sıralamaq üçün */
   justify-content: center;
   align-items: center;
   color: #fff;
-  text-align: center; /* Mətni mərkəzləşdirir */
+  text-align: center;
+  /* Mətni mərkəzləşdirir */
 }
 
-.started-text > h2 {
-  margin-top: 0; /* İstənilən əlavə boşluğu aradan qaldırır */
-  font-size: 2.5rem; /* Başlığın ölçüsünü artırır */
+.started-text>h2 {
+  margin-top: 0;
+  /* İstənilən əlavə boşluğu aradan qaldırır */
+  font-size: 2.5rem;
+  /* Başlığın ölçüsünü artırır */
 }
 
-.started-text > p {
-  margin-top: 1em; /* Paraqrafın yuxarıdakı başlıqdan ayrılması */
-  font-size: 1.2rem; /* Paraqrafın ölçüsünü artırır */
+.started-text>p {
+  margin-top: 1em;
+  /* Paraqrafın yuxarıdakı başlıqdan ayrılması */
+  font-size: 1.2rem;
+  /* Paraqrafın ölçüsünü artırır */
   width: 40%;
 }
-.started-text > button{
+
+.started-text>button {
   width: 10%;
+}
+
+.custom-page-link {
+  color: #206fc9!important;
+  padding: 8px 12px;
+  border-radius: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-page-link:hover {
+  background-color: #e9ecef;
+  color: #6c757d;
+}
+
+.custom-active .custom-page-link {
+  background: rgb(68, 188, 255);
+  background: linear-gradient(90deg, rgb(50, 139, 187) 0%, #0A2E57 100%);
+  color: #fff!important;
+  padding-bottom: 10px;
+
+}
+
+.pagination .page-item.disabled .custom-page-link {
+  color: #6c757d;
+  pointer-events: none;
+  background-color: #e9ecef;
+  padding-bottom: 10px;
+
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination .page-item {
+  margin: 0 5px;
+  padding-bottom: 10px;
+}
+.active>.page-link, .page-link.active{
+  border: 0px!important;
+}
+.page-link:focus{
+  box-shadow: none!important;
 }
