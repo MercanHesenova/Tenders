@@ -10,11 +10,9 @@ import TenderDetail from './pages/TenderDetail';
 import TenderApply from './pages/TenderApply';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import  DataProvider  from './context/Context'
-
+import DataProvider from './context/Context';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 function App() {
   return (
     <DataProvider>

@@ -3,8 +3,9 @@
     justify-content: center;
     align-items: center;
     height: auto;
+    margin: 0 auto;
     background-color: #f4f4f9;
-    text-transform: capitalize;
+    text-transform: capitalize; 
     background: linear-gradient(#3160D0, #223567);
 }
 
@@ -54,10 +55,11 @@
     font-size: 16px;
     background-color: #f9f9f9;
     transition: border-color 0.3s ease;
+    outline: none;
 }
 
-.form-group textarea:hover,
-.form-group input:hover {
+.form-group textarea:focus,
+.form-group input:focus {
     border-color: #007bff;
     outline: none;
     background-color: #ffffff;

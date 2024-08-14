@@ -61,7 +61,7 @@ const CreatedTenders = () => {
         let date = new Date().toISOString().split("T")[0]
         createdTenders.forEach(item => {
             if (item.endDate < date) {
-               deleteTender(item.id);
+                deleteTender(item.id);
             }
         })
     }
@@ -135,33 +135,34 @@ const CreatedTenders = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-
-            <table className="tenderTable">
-                <thead>
-                    <tr>
-                        <th>Owner</th>
-                        <th>Subject</th>
-                        <th>Address</th>
-                        <th>Cost</th>
-                        <th colSpan={2}>End Date</th>
-                    </tr>
-                </thead>
-                <tbody className="tenderBody">
-                    {createdTenders.map((item) => (
-                        <tr key={item?.id}>
-                            <td>{item?.owner}</td>
-                            <th>{item?.subject}</th>
-                            <td>{item?.address}</td>
-                            <td>{item?.estimatedCost}</td>
-                            <td>{item?.endDate}</td>
-                            <td>
-                                <button className='editButton' onClick={() => handleShow(item)}>Edit</button>
-                                <button className='deleteButton' onClick={() => deleteTender(item.id)}>Delete</button>
-                            </td>
+            <div className='container'>
+                <table className="tenderTable  ">
+                    <thead>
+                        <tr>
+                            <th>Owner</th>
+                            <th>Subject</th>
+                            <th>Address</th>
+                            <th>Cost</th>
+                            <th colSpan={2}>End Date</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody className="tenderBody">
+                        {createdTenders.map((item) => (
+                            <tr key={item?.id}>
+                                <td>{item?.owner}</td>
+                                <th>{item?.subject}</th>
+                                <td>{item?.address}</td>
+                                <td>{item?.estimatedCost}</td>
+                                <td>{item?.endDate}</td>
+                                <td>
+                                    <button className='editButton' onClick={() => handleShow(item)}>Edit</button>
+                                    <button className='deleteButton' onClick={() => deleteTender(item.id)}>Delete</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </>
     );
 };
