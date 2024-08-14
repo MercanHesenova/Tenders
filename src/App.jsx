@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import './App.css'
-import  DataProvider  from './context/Context'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/Header';
 import { Route, Routes } from 'react-router-dom';
+
 import Home from './pages/Home';
-import TenderDetail from './pages/TenderDetail';
-import TenderApply from './pages/TenderApply';
-import TenderCreate from './pages/TenderCreate';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import TenderCreate from './pages/TenderCreate';
 import CreatedTenders from './pages/CreatedTenders';
+import TenderDetail from './pages/TenderDetail';
+import TenderApply from './pages/TenderApply';
+import Header from './components/Header';
 import Footer from './components/Footer';
+import  DataProvider  from './context/Context'
+
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

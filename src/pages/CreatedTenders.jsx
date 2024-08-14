@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import '../assets/createdTender.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import '../assets/createdTender.css';
 
 const CreatedTenders = () => {
     const tendersUrl = import.meta.env.VITE_TENDERS;

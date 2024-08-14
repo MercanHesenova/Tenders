@@ -1,8 +1,11 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import '../assets/home.css'
+
 import Tenders from '../components/Tenders'
 import DataProvider from '../context/Context'
+
+import '../assets/home.css'
+
 const Home = () => {
   return (
     <>

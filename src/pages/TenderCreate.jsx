@@ -1,11 +1,13 @@
 import React from 'react'
-import '../assets/tenderCreate.css'
+import axios from 'axios'
 import { useFormik } from 'formik'
 import { TenderCreateSchema } from '../components/TenderCreateSchema'
-import axios from 'axios'
+import '../assets/tenderCreate.css'
 
 const TenderCreate = () => {
-  const tendersUrl = import.meta.env.VITE_TENDERS
+  const baseURL = import.meta.env.VITE_TENDERS
+  const tendersUrl = `${baseURL}/tenders`
+
   const getCurrentDate = () => {
     const date = new Date()
     const year = date.getFullYear()

@@ -1,12 +1,12 @@
-import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import { createContext, useEffect, useState } from "react";
 
 export const Context = createContext()
 
 const DataProvider = ({ children }) => {
   const [data, setData] = useState([])
-  const tendersUrl = import.meta.env.VITE_TENDERS
-  console.log(tendersUrl);
+  const baseURL = import.meta.env.VITE_TENDERS
+  const tendersUrl = `${baseURL}/tenders`
   
   const getTenders = async () => {
     if (!tendersUrl) {

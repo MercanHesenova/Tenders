@@ -1,10 +1,20 @@
-import React, { useContext } from 'react'; 
-import { Form, Container, Button } from 'react-bootstrap';
-import Tender from './Tender';
+import React, { useContext, useEffect, useState } from 'react'; 
+import { Form, Container } from 'react-bootstrap';
+
 import {Context} from '../context/Context';
+import Tender from './Tender';
+
 const Tenders = () => {
   const tenders = useContext(Context)
-  
+  const [search, setSearch] = useState('')
+  const [filteredTenders, setFilteredTenders] = useState(tenders)
+
+  useEffect(()=>{
+    const results = tenders?.filter(tender =>
+      tender?.owner.toLowerCase().includes(search.toLowerCase())|| tender?.address.toLowerCase().includes(search.toLowerCase())
+    )
+    setFilteredTenders(results)
+  }, [search,tenders])
   return (
     <>
       <Container className='mt-5'>
@@ -13,12 +23,12 @@ const Tenders = () => {
           <Form.Control
             type="text"
             placeholder="Search tenders..." className='search'
-          // value={searchTerm}
-          // onChange={(e) => setSearchTerm(e.target.value)}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
           />
         </Form>
         {         
-          tenders?.map((tender) =>(
+          filteredTenders?.map((tender) =>(
             <div key={tender?.id}>
               <Tender  tender={tender}/>
             </div>

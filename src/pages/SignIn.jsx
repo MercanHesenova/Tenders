@@ -17,14 +17,19 @@ const SignIn = () => {
         const existingUser = storedUsers.find(user => user.email == email && user.password == password);
 
         if (existingUser) {
-            navigate('/tender-create'); 
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('userName', `${existingUser.name} ${existingUser.surname}`);
+            window.location.href = '/tender-create'
+            // navigate('/tender-create');
+            
         } else {
-            setErrorMessage('User not found or incorrect password'); 
+            setErrorMessage('User not found or incorrect password');
         }
     };
 
     const handleForgotPassword = (event) => {
-        event.preventDefault(); 
+        
+        event.preventDefault();
         setIsModalOpen(true);
     };
 
@@ -56,16 +61,16 @@ const SignIn = () => {
                 <form onSubmit={handleLogin}>
                     <h1>Login</h1>
                     <div className='input-box'>
-                        <input type="text" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)}/>   
+                        <input type="text" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
 
                     <div className='input-box'>
-                        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>   
+                        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
 
                     <div className='remember-forgot'>
                         <label>
-                            <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)}/> Remember me
+                            <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} /> Remember me
                         </label>
                         <a onClick={handleForgotPassword}>Forgot password?</a>
                     </div>
@@ -88,12 +93,12 @@ const SignIn = () => {
                         <span className='close' onClick={handleCloseModal}>&times;</span>
                         <h2>Password Reset</h2>
                         <form onSubmit={handleModalSubmit}>
-                            <input 
-                                type="email" 
-                                placeholder="Enter your email" 
-                                value={modalEmail} 
-                                onChange={(e) => setModalEmail(e.target.value)} 
-                                required 
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                value={modalEmail}
+                                onChange={(e) => setModalEmail(e.target.value)}
+                                required
                             />
                             <button type="submit" className='modalBtn'>Send</button>
                         </form>
