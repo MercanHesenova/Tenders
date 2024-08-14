@@ -1,10 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import { Navbar, Nav, Container} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const localUserName = localStorage.getItem('userName');
+    if (loggedIn) {
+      setIsLoggedIn(true);
+      setUserName(localUserName);
+    }
+    console.log(loggedIn);
+    
+  }, []);
+  const logOut = () => {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userName');
+    setIsLoggedIn(false);
+    setUserName('');
+    navigate('/')
+  };
   return (
     <>
-      <Navbar bg="white" expand="lg" className="custom-navbar">
+       <Navbar bg="white" expand="lg" className="custom-navbar">
         <Container>
           <Navbar.Brand as={Link} to="/" className="brand-logo">
             <img src="./src/assets/images/logo.png" alt="brand logo" />
@@ -13,8 +35,19 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav className="ml-auto">
-              <Nav.Link as={Link} to="/sign-in">Log in</Nav.Link>
-              <Link to="/sign-up" className="btn btn-outline-primary signup-btn">Sign up</Link>
+              {isLoggedIn ? (
+                <>
+                  <Nav.Link as={Link} to="/tender-create">Tender Create</Nav.Link>
+                  <Nav.Link as={Link} to="/created-tender">Created Tender List</Nav.Link>
+                  <Nav.Link className='text-muted'>{userName}</Nav.Link>
+                  <Nav.Link onClick={logOut}>Logout</Nav.Link>
+                </>
+              ) : (
+                <>
+                  <Nav.Link as={Link} to="/sign-in">Log in</Nav.Link>
+                  <Link to="/sign-up" className="btn btn-outline-primary signup-btn">Sign up</Link>
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

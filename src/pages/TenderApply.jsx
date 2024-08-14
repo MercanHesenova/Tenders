@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
-import '../assets/applyTender.css';
 import { ApplyTenderSchema } from '../components/ApplyTenderSchema'
-import Applied from './Applied';
 const TenderApply = () => {
   const [applyValues, setApplyValues] = useState([]);
 

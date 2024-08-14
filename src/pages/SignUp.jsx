@@ -63,6 +63,8 @@ const SignUp = () => {
 
       const newSignUpData = [...signupData, values]
       localStorage.setItem('signupData', JSON.stringify(newSignUpData));
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('userName', `${values.name} ${values.surname}`);
       setSignupData(newSignUpData)
 
       actions.resetForm();
