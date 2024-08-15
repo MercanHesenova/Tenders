@@ -1,30 +1,33 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Form, Container } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
-// import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { BsCaretLeft } from "react-icons/bs";
-import { BsCaretRight } from "react-icons/bs";
+import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
 import { Context } from '../context/Context';
 import Tender from './Tender';
 
 const Tenders = () => {
-  const tenders = useContext(Context);
+  const { data: tenders } = useContext(Context); // data obyektini kontekstdən çəkirik
   const [search, setSearch] = useState('');
-  const [filteredTenders, setFilteredTenders] = useState(tenders);
+  const [filteredTenders, setFilteredTenders] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(0);
   const tendersPerPage = 5;
 
   useEffect(() => {
-    const results = tenders?.filter(tender =>
-      tender?.owner.toLowerCase().includes(search.toLowerCase()) ||
-      tender?.address.toLowerCase().includes(search.toLowerCase())
-    );
+    // tenders array olub-olmadığını yoxlayırıq və filtrasiya edirik
+    const results = Array.isArray(tenders)
+      ? tenders.filter(tender =>
+          tender?.owner.toLowerCase().includes(search.toLowerCase()) ||
+          tender?.address.toLowerCase().includes(search.toLowerCase())
+        )
+      : [];
     setFilteredTenders(results);
   }, [search, tenders]);
 
   const offset = currentPage * tendersPerPage;
-  const currentTenders = filteredTenders?.slice(offset, offset + tendersPerPage);
+  const currentTenders = Array.isArray(filteredTenders)
+    ? filteredTenders.slice(offset, offset + tendersPerPage)
+    : [];
 
   const handlePageClick = (event) => {
     setCurrentPage(event.selected);
@@ -50,7 +53,7 @@ const Tenders = () => {
           previousLabel={<BsCaretLeft />}
           nextLabel={<BsCaretRight />}
           breakLabel={'...'}
-          pageCount={Math.ceil(filteredTenders?.length / tendersPerPage)}
+          pageCount={Math.ceil(filteredTenders.length / tendersPerPage)}
           marginPagesDisplayed={2}
           pageRangeDisplayed={3}
           onPageChange={handlePageClick}

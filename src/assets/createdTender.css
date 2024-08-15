@@ -1,51 +1,18 @@
 .tenderTable {
-    width: 100%;
-    border-collapse: collapse;
     margin: 20px 0;
-    font-family: 'Roboto', sans-serif;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
+    border-radius: 100px !important  ;
 }
 
-.tenderTable thead {
-    background: linear-gradient(#3160D0, #223567);
-    color: white;
+.tenderHead th {
+    background: linear-gradient(#3160D0, #223567) !important;
+    color: white !important;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: bold;
-    min-width: 800px;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
 }
-
-.tenderTable th,
-.tenderTable td {
-    padding: 12px 15px;
-    text-align: left;
-
-}
-
-.tenderTable th {
-    font-size: 14px;
-}
-
-.tenderTable tbody tr {
-    border-bottom: 1px solid #e0e0e0;
-    transition: background-color 0.3s ease;
-}
-
-.tenderTable tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.tenderTable tbody tr:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
-}
-
-.tenderTable tbody tr td {
-    font-size: 15px;
-    color: #333;
-}
+ 
 
 
 
@@ -62,36 +29,6 @@
     margin: 5px 0;
 }
 
-.editButton {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-}
-
-.editButton:hover {
-    background-color: #0056b3;
-}
-
-.deleteButton {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    margin-left: 10px;
-}
-
-.deleteButton:hover {
-    background-color: #c82333;
-}
 
 .modalİnput input {
     width: 100%;
@@ -102,81 +39,6 @@
     font-size: 14px;
 }
 
-@media(max-width:641px) {
-    .tenderTable tbody tr td {
-        font-size: 10px;
-    }
-
-    .tenderBody th {
-        font-size: 10px;
-    }
-
-    .tenderBody button {
-        padding: 5px;
-    }
-}
-
-@media(max-width:396px) {
-    .tenderTable tbody tr td {
-        font-size: 8px !important;
-    }
-
-    .tenderBody th {
-        font-size: 8px !important;
-    }
-
-    .tenderBody button {
-        padding: 5px;
-    }
-
-    .tenderTable th {
-        font-size: 10px !important;
-    }
-}
-
-@media(max-width:457px) {
-
-    .tenderTable th,
-    .tenderTable td {
-        padding: 1px 2px;
-    }
-
-    .tenderTable th {
-        font-size: 10px;
-    }
-
-    .tenderTable td {
-        font-size: 9px !important;
-    }
-
-    .tenderTable button {
-        padding: 3px;
-        font-size: 10px;
-    }
-}
-
-@media(max-width:564px) {
-
-    .tenderTable th,
-    .tenderTable td {
-        padding: 2px 3px;
-    }
-
-    .tenderTable th {
-        font-size: 12px;
-    }
-
-    .tenderTable td {
-        font-size: 11px !important;
-    }
-
-    .tenderTable button {
-        padding: 4px;
-        font-size: 11px;
-    }
-}
-@media(min-width:1199px){
-    .editButton{
-        margin-right: 5px !important;
-    }
+.editButton {
+    margin-right: 5px !important;
 }

@@ -2,7 +2,7 @@
   "tenders": [
     {
       "id": "b893",
-      "owner": "Marcana",
+      "owner": "Marcan Hasanova",
       "subject": "1 sualda tam düzgün, dolğun cavab götürülməmişdir",
       "endDate": "2024-08-15",
       "address": "Bakı şəhəri Biləcəri qəsəbəsi",
@@ -17,24 +17,6 @@
       "address": "Fuzuli",
       "estimatedCost": 55555,
       "createdDate": "13/08/2024"
-    },
-    {
-      "id": "76ef",
-      "owner": "Marcan",
-      "subject": "aaa",
-      "endDate": "2024-08-31",
-      "address": "dddddddddd",
-      "estimatedCost": 50505,
-      "createdDate": "13/08/2024"
-    },
-    {
-      "id": "2a93",
-      "owner": "Marcanff",
-      "subject": "fff",
-      "endDate": "2024-08-23",
-      "address": "asd",
-      "estimatedCost": 34997,
-      "createdDate": "14/08/2024"
     },
     {
       "id": "58cd",
@@ -62,6 +44,15 @@
       "address": "asd",
       "estimatedCost": 34997,
       "createdDate": "14/08/2024"
+    },
+    {
+      "id": "c572",
+      "owner": "sadfdf",
+      "subject": "dsfsdfdsfc",
+      "endDate": "2024-08-23",
+      "address": "dcfdsvfvfv",
+      "estimatedCost": 56000,
+      "createdDate": "15/08/2024"
     }
   ],
   "apply": []

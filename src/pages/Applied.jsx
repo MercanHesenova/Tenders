@@ -1,8 +1,6 @@
 import React from 'react'
 
 const Applied = () => {
-
-
     return (
         <div>
             <div className='container'>
