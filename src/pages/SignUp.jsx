@@ -1,15 +1,16 @@
 import { useFormik } from 'formik';
 import React ,{ useState, useEffect }from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import '../assets/signUp.css';
 
 
 const SignupSchema = Yup.object().shape({
-  name: Yup.string().required('Required').min(3, 'Too short!').max(10, 'Too long!').matches(/^[A-Za-z]+$/, 'Name can only contain letters'),
-  surname: Yup.string().required('Required').min(5, 'Too short!').max(15, 'Too long!').matches(/^[A-Za-z]+$/, 'Name can only contain letters'),
+  name: Yup.string().required('Required').min(3, 'Too short!').max(10, 'Too long!').matches(/^[A-Za-zÇçƏəĞğIıİiÖöŞşÜü\s]+$/, 'Name can only contain letters'),
+  surname: Yup.string().required('Required').min(5, 'Too short!').max(15, 'Too long!').matches(/^[A-Za-zÇçƏəĞğIıİiÖöŞşÜü\s]+$/, 'Surname can only contain letters'),
   email: Yup.string().email('Invalid email address').required('Required'),
-  number: Yup.string().required('Required').matches(/^\+?[1-9]\d{1,14}$/, 'Invalid phone number format').length(10, 'Phone number must be exactly 10 digits long'),
+  number: Yup.string().required('Required').matches(/^\+994\d{9}$/, 'Invalid phone number format').length(13, 'Phone number must be exactly 13 characters long'),
   password: Yup.string().min(8, 'Password must be at least 8 characters')
     .max(20, 'Password must be at most 20 characters')
     .matches(/[a-z]/, 'Password must contain at least one lowercase letter')
@@ -100,7 +101,7 @@ const SignUp = () => {
 
             <div className='input-wrapper'>
               <label htmlFor="number" className='details'>Phone Number</label>
-              <input type="text" id='number' placeholder='enter your number' value={values.number} onChange={handleChange} />
+              <input type="text" id='number' placeholder='+99455 555 55 55' value={values.number} onChange={handleChange} />
               {touched.number && errors.number && <div className='error' style={{color: 'red'}}> {errors.number}</div>}
             </div>
 
@@ -119,7 +120,12 @@ const SignUp = () => {
             <div className='button'>
               <button type='submit'>Create an account</button>
             </div>
+
+           
           </div>
+          <div className='login-link'>
+            <p>Already have an account?<Link to="/sign-in">Login</Link></p>
+            </div>
         </form>
 
       </div>
