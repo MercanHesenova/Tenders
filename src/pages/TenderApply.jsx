@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import { ApplyTenderSchema } from '../components/ApplyTenderSchema'
+import '../assets/applyTender.css'
 const TenderApply = () => {
   const [applyValues, setApplyValues] = useState([]);
 
@@ -18,7 +19,6 @@ const TenderApply = () => {
     },
     validationSchema: ApplyTenderSchema
   });
-
 
   return (
     <div className='applyParent'>

@@ -1,20 +1,22 @@
-import React from 'react'
-import axios from 'axios'
-import { useFormik } from 'formik'
-import { TenderCreateSchema } from '../components/TenderCreateSchema'
-import '../assets/tenderCreate.css'
+import React, { useContext } from 'react';
+import axios from 'axios';
+import { useFormik } from 'formik';
+import { TenderCreateSchema } from '../components/TenderCreateSchema';
+import { Context } from '../context/Context';
+import '../assets/tenderCreate.css';
 
 const TenderCreate = () => {
-  const baseURL = import.meta.env.VITE_TENDERS
-  const tendersUrl = `${baseURL}/tenders`
+  const { data, setData } = useContext(Context); // Context-dən data və setData əldə edirik
+  const baseURL = import.meta.env.VITE_TENDERS;
+  const tendersUrl = `${baseURL}/tenders`;
 
   const getCurrentDate = () => {
-    const date = new Date()
-    const year = date.getFullYear()
-    const month = String(date.getMonth() + 1).padStart(2, '0')
-    const day = String(date.getDate()).padStart(2, '0')
-    return `${day}/${month}/${year}`
-  }
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${day}/${month}/${year}`;
+  };
 
   const { values, handleChange, errors, handleSubmit } = useFormik({
     initialValues: {
@@ -27,27 +29,28 @@ const TenderCreate = () => {
     },
     onSubmit: async (values) => {
       try {
-        const response = await axios.get(tendersUrl)
-        const tendersRes = response.data ? response.data : []
+        const response = await axios.get(tendersUrl);
+        const tendersRes = response.data ? response.data : [];
 
-        const isSubject = tendersRes.some(tender => tender.subject == values.subject)
+        const isSubject = tendersRes.some(tender => tender.subject === values.subject);
         if (!isSubject) {
-          await axios.post(tendersUrl, values)
+          await axios.post(tendersUrl, values);
+          setData([...data, values]); // Yeni tendəri `Context`-ə əlavə edirik
+        } else {
+          console.error("Tender with this subject already exists.");
         }
       } catch (error) {
         console.log(error);
-
       }
-
     },
     validationSchema: TenderCreateSchema
-  })
+  });
 
   return (
     <div className='tenderCreateParent'>
-      <div className='container'style={{display:"flex",justifyContent:"center", alignItems:"center"}} >
+      <div className='container' style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <form onSubmit={handleSubmit} className='tenderCreateForm'>
-          <div >
+          <div>
             <p>Add a tender</p>
           </div>
           <div>
@@ -80,7 +83,7 @@ const TenderCreate = () => {
               id='date'
               value={values.endDate} onChange={handleChange}
             />
-            {errors.subject && <div className='errors'>{errors.subject}</div>}
+            {errors.endDate && <div className='errors'>{errors.endDate}</div>}
           </div>
           <div>
             <label htmlFor='address'>Address</label>
@@ -108,7 +111,7 @@ const TenderCreate = () => {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default TenderCreate
+export default TenderCreate;

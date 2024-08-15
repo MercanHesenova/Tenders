@@ -1,13 +1,12 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import React, { useContext, useState } from 'react';
+import { Table, Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import { Context } from '../context/Context';
 import '../assets/createdTender.css';
 
 const CreatedTenders = () => {
-    const tendersUrl = import.meta.env.VITE_TENDERS;
-    const [createdTenders, setCreatedTenders] = useState([]);
+    const { data: createdTenders, updateTender, deleteTender } = useContext(Context);
     const [show, setShow] = useState(false);
     const [editTender, setEditTender] = useState(null);
     const [updatedTender, setUpdatedTender] = useState({});
@@ -20,56 +19,21 @@ const CreatedTenders = () => {
         setShow(true);
     };
 
-    const getTenders = async () => {
-        try {
-            const response = await axios.get(tendersUrl);
-            const tendersRes = response.data ? response.data : [];
-            setCreatedTenders(tendersRes);
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    useEffect(() => {
-        getTenders();
-    }, []);
-
-    const deleteTender = async (id) => {
-        try {
-            await axios.delete(`${tendersUrl}/${id}`);
-            setCreatedTenders(prevTenders => prevTenders.filter(tender => tender.id !== id));
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
     const inputChange = (e) => {
         const { name, value } = e.target;
         setUpdatedTender({ ...updatedTender, [name]: value });
     };
 
-    const updateTender = async () => {
-        try {
-            await axios.put(`${tendersUrl}/${editTender.id}`, updatedTender);
-            setCreatedTenders(prevTenders => prevTenders.map(tender => tender.id === editTender.id ? updatedTender : tender));
+    const handleUpdateTender = async () => {
+        if (editTender) {
+            await updateTender(editTender.id, updatedTender);
             handleClose();
-        } catch (error) {
-            console.log(error);
         }
     };
-    const expiredTenders = () => {
-        let date = new Date().toISOString().split("T")[0]
-        createdTenders.forEach(item => {
-            if (item.endDate < date) {
-                deleteTender(item.id);
-            }
-        })
-    }
 
-    useEffect(() => {
-        expiredTenders()
-    }, [createdTenders])
-
+    const handleDeleteTender = async (id) => {
+        await deleteTender(id);
+    };
 
     return (
         <>
@@ -130,14 +94,14 @@ const CreatedTenders = () => {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={updateTender}>
+                    <Button variant="primary" onClick={handleUpdateTender}>
                         Save Changes
                     </Button>
                 </Modal.Footer>
             </Modal>
             <div className='container'>
-                <table className="tenderTable  ">
-                    <thead>
+                <Table striped bordered hover responsive className="tenderTable">
+                    <thead className='tenderHead'>
                         <tr>
                             <th>Owner</th>
                             <th>Subject</th>
@@ -147,21 +111,21 @@ const CreatedTenders = () => {
                         </tr>
                     </thead>
                     <tbody className="tenderBody">
-                        {createdTenders.map((item) => (
+                        {createdTenders?.map((item) => (
                             <tr key={item?.id}>
                                 <td>{item?.owner}</td>
-                                <th>{item?.subject}</th>
+                                <td>{item?.subject}</td>
                                 <td>{item?.address}</td>
                                 <td>{item?.estimatedCost}</td>
                                 <td>{item?.endDate}</td>
                                 <td>
-                                    <button className='editButton' onClick={() => handleShow(item)}>Edit</button>
-                                    <button className='deleteButton' onClick={() => deleteTender(item.id)}>Delete</button>
+                                    <Button variant="outline-primary" className='editButton' onClick={() => handleShow(item)}>Edit</Button>
+                                    <Button variant="outline-danger" onClick={() => handleDeleteTender(item.id)}>Delete</Button>
                                 </td>
                             </tr>
                         ))}
                     </tbody>
-                </table>
+                </Table>
             </div>
         </>
     );
