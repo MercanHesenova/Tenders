@@ -1,15 +1,6 @@
 {
   "tenders": [
     {
-      "id": "b893",
-      "owner": "Marcan Hasanova",
-      "subject": "1 sualda tam düzgün, dolğun cavab götürülməmişdir",
-      "endDate": "2024-08-15",
-      "address": "Bakı şəhəri Biləcəri qəsəbəsi",
-      "estimatedCost": 89000,
-      "createdDate": "12/08/2024"
-    },
-    {
       "id": "276b",
       "owner": "sdfvdc",
       "subject": "ddddddd",
@@ -53,6 +44,24 @@
       "address": "dcfdsvfvfv",
       "estimatedCost": 56000,
       "createdDate": "15/08/2024"
+    },
+    {
+      "id": "1d5c",
+      "owner": "Səlam",
+      "subject": "sadxdsc",
+      "endDate": "2024-08-31",
+      "address": "Imisli",
+      "estimatedCost": 58000,
+      "createdDate": "16/08/2024"
+    },
+    {
+      "id": "0264",
+      "owner": "MMC Company",
+      "subject": "Torpaq məcralı \"Pirvahid\" kanalının beton üzlüyə (PK00+00 ÷ PK12+00, L=1,2 km) alınması və üzərindəki qurğularla birlikdə əsaslı təmiri",
+      "endDate": "2024-09-08",
+      "address": "Quba şəhəri 30 kvartal",
+      "estimatedCost": 168000,
+      "createdDate": "16/08/2024"
     }
   ],
   "apply": []

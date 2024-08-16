@@ -38,7 +38,7 @@ const Tender = ({ tender }) => {
           <div className="text-muted mt-1">
             <small>
               <Link to={`/tender-detail/${tender?.id}`} className="text-decoration-none">
-                <i className="bi bi-caret-right"></i> Ətraflı
+                <i className="bi bi-caret-right"></i> Learn more
               </Link>
             </small>
           </div>

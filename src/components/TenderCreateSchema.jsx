@@ -5,5 +5,5 @@ export const TenderCreateSchema  =Yup.object().shape({
     subject:Yup.string().min(3).trim().required(),
     endDate:Yup.string().required(),
     address:Yup.string().min(3).trim().required(),
-    estimatedCost:Yup.number().moreThan(1000).lessThan(500000)
+    estimatedCost:Yup.number().moreThan(1000).lessThan(50000000)
 })
