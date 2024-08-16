@@ -253,3 +253,11 @@ hr {
 .page-link:focus{
   box-shadow: none!important;
 }
+.apply-button{
+  /* border-image-source:linear-gradient(90deg, rgba(68, 188, 255, 1) 0%, rgba(40, 80, 176, 1) 100%) ; */
+  
+  border: 1px solid black;
+}
+.apply-button:hover{
+  background: linear-gradient(90deg, rgba(68, 188, 255, 1) 0%, rgba(40, 80, 176, 1) 100%);
+}
