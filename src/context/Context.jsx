@@ -7,7 +7,9 @@ const DataProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const baseURL = import.meta.env.VITE_TENDERS;
   const tendersUrl = `${baseURL}/tenders`;
+  const applyUrl = `${baseURL}/apply`;
 
+ 
   const getTenders = async () => {
     try {
       const response = await axios.get(tendersUrl);
@@ -36,13 +38,13 @@ const DataProvider = ({ children }) => {
       console.error("Delete error", error);
     }
   };
-
+ 
   useEffect(() => {
     getTenders();
   }, []);
 
   return (
-    <Context.Provider value={{ data, updateTender, deleteTender,setData }}>
+    <Context.Provider value={{ data, updateTender, deleteTender, setData, tendersUrl,applyUrl }}>
       {children}
     </Context.Provider>
   );
