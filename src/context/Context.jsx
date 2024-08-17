@@ -42,7 +42,7 @@ const DataProvider = ({ children }) => {
   }, []);
 
   return (
-    <Context.Provider value={{ data, updateTender, deleteTender }}>
+    <Context.Provider value={{ data, updateTender, deleteTender,setData }}>
       {children}
     </Context.Provider>
   );

@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import { TenderCreateSchema } from '../components/TenderCreateSchema';
 import { Context } from '../context/Context';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../assets/tenderCreate.css';
 
 const TenderCreate = () => {
@@ -33,14 +35,17 @@ const TenderCreate = () => {
         const tendersRes = response.data ? response.data : [];
 
         const isSubject = tendersRes.some(tender => tender.subject === values.subject);
+       
         if (!isSubject) {
           await axios.post(tendersUrl, values);
           setData([...data, values]); // Yeni tendəri `Context`-ə əlavə edirik
+          toast.success("Tender successfully added!")
         } else {
-          console.error("Tender with this subject already exists.");
+          toast.error("Tender with this subject already exists.");
         }
       } catch (error) {
-        console.log(error);
+        console.error("Error details:", error);
+        toast.error("An error occurred while adding the tender.");
       }
     },
     validationSchema: TenderCreateSchema
@@ -48,6 +53,7 @@ const TenderCreate = () => {
 
   return (
     <div className='tenderCreateParent'>
+      <ToastContainer />
       <div className='container' style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <form onSubmit={handleSubmit} className='tenderCreateForm'>
           <div>
