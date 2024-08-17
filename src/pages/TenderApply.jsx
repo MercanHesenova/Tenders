@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import { ApplyTenderSchema } from '../components/ApplyTenderSchema'
 import '../assets/applyTender.css'
+import { Context } from '../context/Context';
+import axios from 'axios';
 const TenderApply = () => {
-  const [applyValues, setApplyValues] = useState([]);
-
+  const { applyUrl, setData, data } = useContext(Context)
   const formik = useFormik({
     initialValues: {
       companyName: "",
@@ -12,10 +13,14 @@ const TenderApply = () => {
       teamInfo: "",
       companyFile: null
     },
-    onSubmit: (values) => {
-      setApplyValues(values);
-      setApplyValues(values)
-      console.log(applyValues);
+    onSubmit: async (values) => {
+      try {
+        const response = axios.post(applyUrl, values)
+        setData([...data, response.data])
+      } catch (error) {
+        console.log(error);
+      }
+      console.log(data);
     },
     validationSchema: ApplyTenderSchema
   });

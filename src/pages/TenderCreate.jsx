@@ -8,9 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../assets/tenderCreate.css';
 
 const TenderCreate = () => {
-  const { data, setData } = useContext(Context); // Context-dən data və setData əldə edirik
-  const baseURL = import.meta.env.VITE_TENDERS;
-  const tendersUrl = `${baseURL}/tenders`;
+  const { data, setData,tendersUrl } = useContext(Context); // Context-dən data və setData əldə edirik
 
   const getCurrentDate = () => {
     const date = new Date();
