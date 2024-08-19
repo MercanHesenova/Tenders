@@ -17,8 +17,8 @@ const Tenders = () => {
     // tenders array olub-olmadığını yoxlayırıq və filtrasiya edirik
     const results = Array.isArray(tenders)
       ? tenders.filter(tender =>
-          tender?.owner.toLowerCase().includes(search.toLowerCase()) ||
-          tender?.address.toLowerCase().includes(search.toLowerCase())
+          tender?.owner?.toLowerCase().includes(search.toLowerCase()) ||
+          tender?.address?.toLowerCase().includes(search.toLowerCase())
         )
       : [];
     setFilteredTenders(results);

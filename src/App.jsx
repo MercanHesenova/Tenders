@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import DataProvider from './context/Context';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CreatedApply from './pages/CreatedApply';
 function App() {
   return (
     <DataProvider>
