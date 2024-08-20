@@ -8,7 +8,23 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../assets/tenderCreate.css';
 
 const TenderCreate = () => {
-  const { data, setData,tendersUrl } = useContext(Context); // Context-dən data və setData əldə edirik
+  const { data, setData, tendersUrl } = useContext(Context); // Context-dən data və setData əldə edirik
+
+  const tenderSubmit = async (values) => {
+    try {
+      const isSubject = data.some(tender => tender.subject === values.subject);
+      if (!isSubject) {
+        await axios.post(tendersUrl, values);
+        setData([...data, values]); // Yeni tendəri `Context`-ə əlavə edirik
+        toast.success("Tender successfully added!")
+      } else {
+        toast.error("Tender with this subject already exists.");
+      }
+    } catch (error) {
+      console.error("Error details:", error);
+      toast.error("An error occurred while adding the tender.");
+    }
+  }
 
   const getCurrentDate = () => {
     const date = new Date();
@@ -27,25 +43,7 @@ const TenderCreate = () => {
       estimatedCost: "",
       createdDate: getCurrentDate()
     },
-    onSubmit: async (values) => {
-      try {
-        const response = await axios.get(tendersUrl);
-        const tendersRes = response.data ? response.data : [];
-
-        const isSubject = tendersRes.some(tender => tender.subject === values.subject);
-       
-        if (!isSubject) {
-          await axios.post(tendersUrl, values);
-          setData([...data, values]); // Yeni tendəri `Context`-ə əlavə edirik
-          toast.success("Tender successfully added!")
-        } else {
-          toast.error("Tender with this subject already exists.");
-        }
-      } catch (error) {
-        console.error("Error details:", error);
-        toast.error("An error occurred while adding the tender.");
-      }
-    },
+    onSubmit: tenderSubmit,
     validationSchema: TenderCreateSchema
   });
 
