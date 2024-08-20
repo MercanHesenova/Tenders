@@ -3,9 +3,24 @@ import { useFormik } from 'formik';
 import { ApplyTenderSchema } from '../components/ApplyTenderSchema'
 import '../assets/applyTender.css'
 import { Context } from '../context/Context';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 const TenderApply = () => {
   const { applyUrl, setData, data } = useContext(Context)
+
+  const handleSubmit = async (values) => {
+    try {
+      const response = axios.post(applyUrl, values)
+      setData([...data, response.data])
+      toast.success("Apply successfully added!")
+    } catch (error) {
+      toast.error("An error occurred while adding the apply.");
+      console.log(error);
+    }
+    console.log(data);
+  }
+
   const formik = useFormik({
     initialValues: {
       companyName: "",
@@ -13,20 +28,13 @@ const TenderApply = () => {
       teamInfo: "",
       companyFile: null
     },
-    onSubmit: async (values) => {
-      try {
-        const response = axios.post(applyUrl, values)
-        setData([...data, response.data])
-      } catch (error) {
-        console.log(error);
-      }
-      console.log(data);
-    },
+    onSubmit: handleSubmit,
     validationSchema: ApplyTenderSchema
   });
 
   return (
     <div className='applyParent'>
+      <ToastContainer />
       <div className='container' style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <form className='applyForm' onSubmit={formik.handleSubmit}>
           <div>
@@ -81,6 +89,6 @@ const TenderApply = () => {
       </div>
     </div>
   );
-};
+}
 
 export default TenderApply;

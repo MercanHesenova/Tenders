@@ -5,8 +5,8 @@
     height: auto;
     margin: 0 auto;
     background-color: #f4f4f9;
-    text-transform: capitalize; 
-    background: linear-gradient(#3160D0, #223567);
+    text-transform: capitalize;
+    background: linear-gradient(135deg, #003580, #00a6ff);
 }
 
 .applyForm {
@@ -21,14 +21,13 @@
 }
 
 .applyForm p {
-    font-weight: bold;
+    font-weight: 500;
     text-align: center;
-    font-size: 24px;
+    font-size: 25px;
+    color: #2475e7;
     text-transform: uppercase;
 }
-.applyForm p:hover {
-  color: #0056b3;
-}
+
 .applyForm:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
@@ -43,7 +42,7 @@
     font-weight: 600;
     color: #333;
 }
- 
+
 
 .form-group textarea,
 .form-group input {

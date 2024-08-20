@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #003580, #00a6ff);
+    background: linear-gradient(135deg, #003580, #00a6ff);;
 }
 
 .SignInContainer{
@@ -41,8 +41,12 @@
     padding-left: 15px;
     font-size: 16px;
     border-bottom-width: 2px;
+    transition: border-color 0.3s ease;
 }
-
+.input-box input:focus{
+    border-color: #007bff;
+    outline: none;
+}
 .wrapper .remember-forgot{
     display: flex;
     justify-content: space-between;
