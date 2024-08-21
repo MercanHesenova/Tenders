@@ -10,15 +10,19 @@ const CreatedTenders = () => {
     const [show, setShow] = useState(false);
     const [editTender, setEditTender] = useState(null);
     const [updatedTender, setUpdatedTender] = useState({});
-
+    const [deleteModal, setDeleteModal] = useState(false);
+    const [deleteId, setDeleteId] = useState(null)
     const handleClose = () => setShow(false);
-
+    const handleDeleteModalClose = () => setDeleteModal(false);
     const handleShow = (tender) => {
         setEditTender(tender);
         setUpdatedTender(tender);
         setShow(true);
     };
-
+    const handleDeleteModalShow = (id) => {
+        setDeleteId(id);
+        setDeleteModal(true);
+    };
     const inputChange = (e) => {
         const { name, value } = e.target;
         setUpdatedTender({ ...updatedTender, [name]: value });
@@ -31,14 +35,17 @@ const CreatedTenders = () => {
         }
     };
 
-    const handleDeleteTender = async (id) => {
-        await deleteTender(id);
+    const handleDeleteTender = async () => {
+        if (deleteId) {
+            await deleteTender(deleteId);
+            setDeleteModal(false);
+        }
     };
 
     return (
         <>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header style={{justifyContent:"center"}}>
                     <Modal.Title>Edit Tender</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -91,11 +98,24 @@ const CreatedTenders = () => {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button style={{margin:"0 auto"}} variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleUpdateTender}>
+                    <Button style={{margin:"0 auto",marginTop:"10px"}} variant="primary" onClick={handleUpdateTender}>
                         Save Changes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+            <Modal show={deleteModal} onHide={handleDeleteModalClose}>
+                <Modal.Header style={{textAlign:"center"}} >
+                    <Modal.Title>Are you sure you want to delete this tender?</Modal.Title>
+                </Modal.Header>
+                <Modal.Footer>
+                    <Button style={{margin:"0 auto"}} variant="secondary" onClick={handleDeleteModalClose}>
+                        Cancel
+                    </Button>
+                    <Button style={{margin:"0 auto",marginTop:"10px"}} variant="danger" onClick={handleDeleteTender}>
+                        Delete
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -120,7 +140,7 @@ const CreatedTenders = () => {
                                 <td>{item?.endDate}</td>
                                 <td>
                                     <Button variant="outline-primary" className='editButton' onClick={() => handleShow(item)}>Edit</Button>
-                                    <Button variant="outline-danger" onClick={() => handleDeleteTender(item.id)}>Delete</Button>
+                                    <Button variant="outline-danger" onClick={() => handleDeleteModalShow(item?.id)}>Delete</Button>
                                 </td>
                             </tr>
                         ))}
