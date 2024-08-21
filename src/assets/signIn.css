@@ -139,6 +139,22 @@ form .loginBtn{
     transform-origin: bottom left;
 }
 
+.overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(8px); 
+    z-index: 999; 
+}
+
+.overlay.show {
+    display: block;
+}
+
 .modal {
     display: none; 
     justify-content: center;
@@ -148,7 +164,7 @@ form .loginBtn{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
     z-index: 1000;
 }
 
@@ -177,6 +193,11 @@ form .loginBtn{
     border-bottom-width: 2px;
 }
 
+.modal input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
 form .modalBtn {
     text-align: center;
 }
@@ -203,12 +224,13 @@ form .modalBtn {
 .modal-content {
     background: white;
     padding: 20px;
-    border-radius: 8px; /* Daha yuvarlak köşeler */
+    border-radius: 8px; 
     position: relative;
-    width: 90%; /* Genişlik ayarı */
-    max-width: 400px; /* Maksimum genişlik */
+    width: 90%;
+    max-width: 400px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box; /* Padding ve border’ı genişlik ve yüksekliğe dahil et */
+    box-sizing: border-box; 
+    overflow-y: auto;
 }
 
 .close {
@@ -243,6 +265,7 @@ form .modalBtn {
     .modal-content {
         width: 90%;
         padding: 15px;
+        max-height: 80%;
     }
 
     .modal h2 {
