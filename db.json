@@ -1,33 +1,6 @@
 {
   "tenders": [
     {
-      "id": "276b",
-      "owner": "sdfvdc",
-      "subject": "ddddddd",
-      "endDate": "2024-08-31",
-      "address": "Fuzuli",
-      "estimatedCost": 55555,
-      "createdDate": "13/08/2024"
-    },
-    {
-      "id": "58cd",
-      "owner": "Marcanffeexxdd",
-      "subject": "fffaaaaa",
-      "endDate": "2024-08-23",
-      "address": "asd",
-      "estimatedCost": 34997,
-      "createdDate": "14/08/2024"
-    },
-    {
-      "id": "759a",
-      "owner": "Marcanffeexxdda",
-      "subject": "fffaaaaaa",
-      "endDate": "2024-08-23",
-      "address": "asd",
-      "estimatedCost": 34997,
-      "createdDate": "14/08/2024"
-    },
-    {
       "id": "7cc5",
       "owner": "Marcanffeexxddaf",
       "subject": "fffaaaaaaf",
@@ -44,15 +17,6 @@
       "address": "dcfdsvfvfv",
       "estimatedCost": 56000,
       "createdDate": "15/08/2024"
-    },
-    {
-      "id": "1d5c",
-      "owner": "Səlam",
-      "subject": "sadxdsc",
-      "endDate": "2024-08-31",
-      "address": "Imisli",
-      "estimatedCost": 58000,
-      "createdDate": "16/08/2024"
     },
     {
       "id": "0264",
