@@ -18,7 +18,6 @@ function App() {
   return (
     <DataProvider>
       <Header></Header>
-      <CreatedTenders/>
       <Routes>
       <Route path='/' element={<Home/>}></Route>
         <Route path='/tender-detail/:id' element={<TenderDetail/>}></Route>
