@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -12,6 +12,17 @@ const CreatedTenders = () => {
     const [updatedTender, setUpdatedTender] = useState({});
     const [deleteModal, setDeleteModal] = useState(false);
     const [deleteId, setDeleteId] = useState(null)
+    const [filteredTender, setFilteredTender] = useState([])
+
+    const email = localStorage.getItem("signupData")
+    const parsedData = JSON.parse(email)
+    const dataEmail = parsedData.map(item => item.email).join(" ")
+    console.log(dataEmail);
+    useEffect(() => {
+        const filteredDataInEmail = createdTenders.filter(tender => tender?.email == dataEmail)
+        console.log(filteredDataInEmail);
+        setFilteredTender(filteredDataInEmail)
+    }, [createdTenders,email])
     const handleClose = () => setShow(false);
     const handleDeleteModalClose = () => setDeleteModal(false);
     const handleShow = (tender) => {
@@ -45,7 +56,7 @@ const CreatedTenders = () => {
     return (
         <>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header style={{justifyContent:"center"}}>
+                <Modal.Header style={{ justifyContent: "center" }}>
                     <Modal.Title>Edit Tender</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -98,23 +109,23 @@ const CreatedTenders = () => {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button style={{margin:"0 auto"}} variant="secondary" onClick={handleClose}>
+                    <Button style={{ margin: "0 auto" }} variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button style={{margin:"0 auto",marginTop:"10px"}} variant="primary" onClick={handleUpdateTender}>
+                    <Button style={{ margin: "0 auto", marginTop: "10px" }} variant="primary" onClick={handleUpdateTender}>
                         Save Changes
                     </Button>
                 </Modal.Footer>
             </Modal>
             <Modal show={deleteModal} onHide={handleDeleteModalClose}>
-                <Modal.Header style={{textAlign:"center"}} >
+                <Modal.Header style={{ textAlign: "center" }} >
                     <Modal.Title>Are you sure you want to delete this tender?</Modal.Title>
                 </Modal.Header>
                 <Modal.Footer>
-                    <Button style={{margin:"0 auto"}} variant="secondary" onClick={handleDeleteModalClose}>
+                    <Button style={{ margin: "0 auto" }} variant="secondary" onClick={handleDeleteModalClose}>
                         Cancel
                     </Button>
-                    <Button style={{margin:"0 auto",marginTop:"10px"}} variant="danger" onClick={handleDeleteTender}>
+                    <Button style={{ margin: "0 auto", marginTop: "10px" }} variant="danger" onClick={handleDeleteTender}>
                         Delete
                     </Button>
                 </Modal.Footer>
@@ -131,7 +142,7 @@ const CreatedTenders = () => {
                         </tr>
                     </thead>
                     <tbody className="tenderBody">
-                        {createdTenders?.map((item) => (
+                        {filteredTender?.map((item) => (
                             <tr key={item?.id}>
                                 <td>{item?.owner}</td>
                                 <td>{item?.subject}</td>

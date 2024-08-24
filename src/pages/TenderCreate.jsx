@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import { TenderCreateSchema } from '../components/TenderCreateSchema';
@@ -9,6 +9,7 @@ import '../assets/tenderCreate.css';
 
 const TenderCreate = () => {
   const { data, setData, tendersUrl } = useContext(Context); // Context-dən data və setData əldə edirik
+  console.log(data);
 
   const tenderSubmit = async (values) => {
     try {
@@ -34,18 +35,32 @@ const TenderCreate = () => {
     return `${day}/${month}/${year}`;
   };
 
-  const { values, handleChange, errors, handleSubmit } = useFormik({
+  const { values, handleChange, errors, handleSubmit, setFieldValue } = useFormik({
     initialValues: {
       owner: "",
       subject: "",
       endDate: "",
       address: "",
       estimatedCost: "",
+      email: "",
       createdDate: getCurrentDate()
     },
     onSubmit: tenderSubmit,
     validationSchema: TenderCreateSchema
   });
+  useEffect(() => {
+    const signupData = localStorage.getItem("signupData");
+    if (signupData) {
+      const parsedSignupData = JSON.parse(signupData);
+      const email = parsedSignupData.map(item => item.email).join(" ");
+      console.log(email);
+      if (email) {
+        setFieldValue("email", email);
+      }
+    } else {
+      console.log("No signup data found in localStorage.");
+    }
+  }, [setFieldValue]);
 
   return (
     <div className='tenderCreateParent'>
