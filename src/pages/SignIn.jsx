@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/signIn.css';
 
@@ -13,6 +13,18 @@ const SignIn = () => {
         modalEmail: ''
     });
 
+    useEffect(() => {
+        const savedEmail = localStorage.getItem('savedEmail') || ''
+        const rememberMe = localStorage.getItem('rememberMe') == 'true'
+
+        setState(prevState => ({
+            ...prevState,
+            email: savedEmail,
+            rememberMe: rememberMe
+        }));
+
+    }, [])
+
     const handleLogin = (event) => {
         event.preventDefault();
         const storedUsers = JSON.parse(localStorage.getItem('signupData')) || [];
@@ -21,7 +33,17 @@ const SignIn = () => {
         if (existingUser) {
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('userName', `${existingUser.name} ${existingUser.surname}`);
+
+            if (state.rememberMe) {
+                localStorage.setItem('savedEmail', state.email);
+                localStorage.setItem('rememberMe', 'true');
+            } else {
+                localStorage.removeItem('savedEmail');
+                localStorage.removeItem('rememberMe');
+            }
+
             window.location.href = '/tender-create';
+            
         } else {
             setState(prevState => ({
                 ...prevState,
@@ -82,7 +104,7 @@ const SignIn = () => {
         <div className='wrapper'>
             <div className='SignInContainer'>
                 <form onSubmit={handleLogin}>
-                    <h1>Welcome Back</h1>
+                    <h1>Welcome Back!</h1>
                     <p className='login-paraghraph'>Enter your credential to login</p>
                     <div className='input-box'>
                         <input type="text" placeholder="Email" required value={state.email} onChange={handleChange('email')}/>
@@ -99,7 +121,7 @@ const SignIn = () => {
                     <div className='loginBtn'>
                         <button type='submit'>Login</button>
                     </div>
-                    {state.errorMessage && <p style={{ color: 'red', textAlign: 'center' }}>{state.errorMessage}</p>}
+                    {state.errorMessage && <p style={{ color: 'red', textAlign: 'center', marginTop: '30px' }}>{state.errorMessage}</p>}
                     <div className='register-link'>
                         <p>Don't have an account? <Link to="/sign-up">Register now!</Link></p>
                     </div>
