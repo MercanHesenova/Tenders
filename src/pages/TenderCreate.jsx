@@ -9,7 +9,6 @@ import '../assets/tenderCreate.css';
 
 const TenderCreate = () => {
   const { data, setData, tendersUrl } = useContext(Context); // Context-dən data və setData əldə edirik
-  console.log(data);
 
   const tenderSubmit = async (values) => {
     try {
@@ -53,7 +52,6 @@ const TenderCreate = () => {
     if (signupData) {
       const parsedSignupData = JSON.parse(signupData);
       const email = parsedSignupData.map(item => item.email).join(" ");
-      console.log(email);
       if (email) {
         setFieldValue("email", email);
       }
