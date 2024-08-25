@@ -1,9 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap';
 import { Context } from '../context/Context';
 import '../assets/createdTender.css';
 const CreatedApply = () => {
     const { dataApply } = useContext(Context)
+    const [filterDataApply, setFilterDataApply] = useState([])
+    const email = localStorage.getItem("signupData")
+    const parsed = JSON.parse(email)
+    const applyEmail = parsed.map(item => item.email).join(" ")
+    useEffect(() => {
+        const filteredApplyData = dataApply.filter(item => item?.email == applyEmail)
+        setFilterDataApply(filteredApplyData)
+    }, [dataApply, email])
     return (
         <div className='container'>
             <Table striped bordered hover responsive className="tenderTable">
@@ -16,7 +24,7 @@ const CreatedApply = () => {
                     </tr>
                 </thead>
                 <tbody className="tenderBody">
-                    {dataApply?.map((item) => (
+                    {filterDataApply?.map((item) => (
                         <tr key={item?.id}>
                             <td>{item?.companyName}</td>
                             <td>{item?.companyWork}</td>

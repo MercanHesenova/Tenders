@@ -17,10 +17,9 @@ const CreatedTenders = () => {
     const email = localStorage.getItem("signupData")
     const parsedData = JSON.parse(email)
     const dataEmail = parsedData.map(item => item.email).join(" ")
-    console.log(dataEmail);
+
     useEffect(() => {
         const filteredDataInEmail = createdTenders.filter(tender => tender?.email == dataEmail)
-        console.log(filteredDataInEmail);
         setFilteredTender(filteredDataInEmail)
     }, [createdTenders,email])
     const handleClose = () => setShow(false);

@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 const TenderApply = () => {
-  const { applyUrl, setData, data } = useContext(Context)
+  const { applyUrl, setData, data, dataApply } = useContext(Context)
 
   const handleSubmit = async (values) => {
     try {
@@ -26,12 +26,25 @@ const TenderApply = () => {
       companyName: "",
       companyWork: "",
       teamInfo: "",
-      companyFile: null
+      companyFile: "",
+      email: ""
     },
     onSubmit: handleSubmit,
     validationSchema: ApplyTenderSchema
   });
-
+  useEffect(() => {
+    const signupData = localStorage.getItem("signupData")
+    if (signupData) {
+      const parsedSignupData = JSON.parse(signupData)
+      const email = parsedSignupData.map(applyEmail => applyEmail.email).join(" ")
+      if (email) {
+        formik.setFieldValue("email", email)
+      }
+      else{
+        console.log("data not found");
+      }
+    }
+  }, [formik.setFieldValue])
   return (
     <div className='applyParent'>
       <ToastContainer />
