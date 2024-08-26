@@ -36,7 +36,7 @@ const Tenders = () => {
   return (
     <>
       <Container className='mt-5'>
-        <h2 className='text-center tender-h2 mb-5'>Tenders</h2>
+        <h2 className='text-center tender-h2 mb-5' id='tenders'>Tenders</h2>
         <Form className="mb-3">
           <Form.Control
             type="text"
