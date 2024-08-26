@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Route, Routes } from 'react-router-dom';
+import React from 'react'
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
@@ -15,17 +15,19 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CreatedApply from './pages/CreatedApply';
 function App() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn")
+
   return (
     <DataProvider>
       <Header></Header>
       <Routes>
-      <Route path='/' element={<Home/>}></Route>
-        <Route path='/tender-detail/:id' element={<TenderDetail/>}></Route>
-        <Route path='/tender-apply/:id' element={<TenderApply/>}></Route>
-        <Route path='/tender-create' element={<TenderCreate/>}></Route>
-        <Route path='/created-tender' element={<CreatedTenders/>}></Route>
-        <Route path='/sign-in' element={<SignIn/>}></Route>
-        <Route path='/sign-up' element={<SignUp/>}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/tender-detail/:id' element={<TenderDetail />}></Route>
+        <Route path='/tender-apply/:id' element={isLoggedIn ? <TenderApply /> : <Navigate to="/sign-in" />}></Route>
+        <Route path='/tender-create' element={isLoggedIn ? <TenderCreate /> : <Navigate to="/sign-in" />}></Route>
+        <Route path='/created-tender' element={isLoggedIn ? <CreatedTenders /> : <Navigate to="/sign-in" />}></Route>
+        <Route path='/sign-in' element={<SignIn />}></Route>
+        <Route path='/sign-up' element={<SignUp />}></Route>
       </Routes>
       <Footer></Footer>
     </DataProvider>
