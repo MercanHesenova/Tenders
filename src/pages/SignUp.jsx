@@ -1,11 +1,15 @@
-import { useFormik } from 'formik';
+// Main Imports
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+
+// Library Imports
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import '../assets/signUp.css';
 
+// Asset Imports
+import '../assets/signUp.css';
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string().required('Required').min(3, 'Too short!').max(10, 'Too long!').matches(/^[A-Za-zÇçƏəĞğIıİiÖöŞşÜü\s]+$/, 'Name can only contain letters'),

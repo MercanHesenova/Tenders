@@ -1,13 +1,15 @@
-// Main import
+// Main Imports
 import React, { useEffect, useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 
-//Custom import
+//Custom Imports
 import Tenders from '../components/Tenders'
 import DataProvider from '../context/Context'
 
-//Asset
+//Library Imports
+import { Col, Container, Row } from 'react-bootstrap'
+
+//Asset Imports
 import '../assets/home.css'
 
 const Home = () => {

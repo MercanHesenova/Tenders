@@ -1,8 +1,14 @@
-import React, { useContext } from 'react'
+// Main Imports
+import React, { useContext } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+
+// Library Imports
 import { Card, Row, Col, Container, Button } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { useNavigate, useParams } from 'react-router-dom';
+
+// Custom Imports
 import { Context } from '../context/Context';
+
 
 const TenderDetail = () => {
   const { id } = useParams()
@@ -20,7 +26,7 @@ const TenderDetail = () => {
                 <small>Tender: {findTender?.id} </small>
               </div>
               <h5 className="my-3">
-                <a href="#" className="tender-text text-decoration-none">
+                <a  className="tender-text text-decoration-none">
                   <span className='text-muted'>Tender Owner: </span>  {findTender?.owner}
                 </a>
               </h5>
@@ -28,7 +34,7 @@ const TenderDetail = () => {
                 <h6 className='text-muted d-inline'>Tender Subject:</h6> {findTender?.subject}
               </div>
               <h5 className="my-2"> 
-                <span className='text-muted'>Tender Estimated Cost:</span> {findTender?.estimatedCost} <span className="currency-icon">₼</span>
+                <span className='text-muted'>Tender Price:</span> {findTender?.estimatedCost} <span className="currency-icon">₼</span>
               </h5>
               <div className="text-muted my-2">
                 <small><i className="bi bi-calendar-check"></i> Created Date:  {findTender?.createdDate}</small>

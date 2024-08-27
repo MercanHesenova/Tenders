@@ -1,10 +1,24 @@
-import React from 'react'
-import { Card, Row, Col } from 'react-bootstrap';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+// Main Imports
+import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Library Imports
+import { Card, Row, Col } from 'react-bootstrap';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+
 const Tender = ({ tender }) => {
-  let date = tender?.endDate.split('-').reverse().join('/')
+  if (!tender) return null; 
+
+  let [day, month, year] = tender.endDate.split('-').reverse();
+  let deadlineDate = new Date(`${year}-${month}-${day}`);
+  let currentDate = new Date();
+
+  if (currentDate > deadlineDate) {
+    return null; 
+  }
+
+  let formattedDate = tender.endDate.split('-').reverse().join('/');
 
   return (
     <Card className="p-3 mb-3  blue-shadow">
@@ -32,7 +46,7 @@ const Tender = ({ tender }) => {
           </h4>
           <div className="text-warning">
             <small>
-              <i className="bi bi-exclamation-circle"></i> Application deadline: {date}
+              <i className="bi bi-exclamation-circle"></i> Application deadline: {formattedDate}
             </small>
           </div>
           <div className="text-muted mt-1">

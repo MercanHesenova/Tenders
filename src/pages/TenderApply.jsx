@@ -1,11 +1,19 @@
+// Main Imports
 import React, { useContext, useEffect, useState } from 'react';
 import { useFormik } from 'formik';
-import { ApplyTenderSchema } from '../components/ApplyTenderSchema'
-import '../assets/applyTender.css'
-import { Context } from '../context/Context';
+import axios from 'axios';
+
+// Library Imports
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
+
+// Custom Imports
+import { ApplyTenderSchema } from '../components/ApplyTenderSchema';
+import { Context } from '../context/Context';
+
+// Asset Imports
+import '../assets/applyTender.css';
+
 const TenderApply = () => {
   const { applyUrl, setData, data, dataApply } = useContext(Context)
 
