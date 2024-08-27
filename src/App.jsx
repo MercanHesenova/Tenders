@@ -8,10 +8,11 @@ import TenderCreate from './pages/TenderCreate';
 import CreatedTenders from './pages/CreatedTenders';
 import TenderDetail from './pages/TenderDetail';
 import TenderApply from './pages/TenderApply';
+import CreatedApply from './pages/CreatedApply';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import DataProvider from './context/Context';
-import './App.css'
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const isLoggedIn = localStorage.getItem("isLoggedIn")
@@ -23,10 +24,11 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/tender-detail/:id' element={<TenderDetail />}></Route>
         <Route path='/tender-apply/:id' element={isLoggedIn ? <TenderApply /> : <Navigate to="/sign-in" />}></Route>
+        <Route path='/applied-tender' element = {isLoggedIn? <CreatedApply/> : <Navigate to="/sign-in"/>}></Route>
         <Route path='/tender-create' element={isLoggedIn ? <TenderCreate /> : <Navigate to="/sign-in" />}></Route>
         <Route path='/created-tender' element={isLoggedIn ? <CreatedTenders /> : <Navigate to="/sign-in" />}></Route>
-        <Route path='/sign-in' element={<SignIn />}></Route>
-        <Route path='/sign-up' element={<SignUp />}></Route>
+        <Route path='/sign-in' element={!isLoggedIn ? <SignIn /> : <Navigate to="/"/>}></Route>
+        <Route path='/sign-up' element={!isLoggedIn ? <SignIn /> : <Navigate to="/"/>}></Route>
       </Routes>
       <Footer></Footer>
     </DataProvider>

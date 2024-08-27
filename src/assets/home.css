@@ -133,9 +133,11 @@
   color: #206fc9;
 }
 
+
 .blue-shadow {
   box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
   border-radius: 5px;
+  line-height: 30px;
 }
 
 .tender-h2 {
