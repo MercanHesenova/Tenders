@@ -22,7 +22,7 @@ const Header = () => {
     localStorage.removeItem('userName');
     setIsLoggedIn(false);
     setUserName('');
-    navigate('/')
+    window.location.href = '/';
   };
   return (
     <>

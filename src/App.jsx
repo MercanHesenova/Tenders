@@ -16,7 +16,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const isLoggedIn = localStorage.getItem("isLoggedIn")
-
+  console.log(isLoggedIn);
+  
   return (
     <DataProvider>
       <Header></Header>
