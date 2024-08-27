@@ -1,9 +1,14 @@
+// Main Imports
 import React, { useContext, useEffect, useState } from 'react';
 import { Form, Container } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
-import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
+
+// Custom Imports
 import { Context } from '../context/Context';
 import Tender from './Tender';
+
+// Asset Imports
+import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
 
 const Tenders = () => {
   const { data: tenders } = useContext(Context); // data obyektini kontekstdən çəkirik
@@ -14,13 +19,21 @@ const Tenders = () => {
   const tendersPerPage = 5;
 
   useEffect(() => {
-    // tenders array olub-olmadığını yoxlayırıq və filtrasiya edirik
-    const results = Array.isArray(tenders)
-      ? tenders.filter(tender =>
-          tender?.owner?.toLowerCase().includes(search.toLowerCase()) ||
-          tender?.address?.toLowerCase().includes(search.toLowerCase())
-        )
+    const parseDate = (dateStr) => {
+      const [day, month, year] = dateStr.split('/').map(Number);
+      return new Date(year, month - 1, day); // month is 0-based
+    };
+
+    // First, sort tenders by createdDate in descending order (most recent first)
+    const sortedTenders = Array.isArray(tenders)
+      ? tenders.sort((a, b) => parseDate(b.createdDate) - parseDate(a.createdDate))
       : [];
+
+    // Then, filter the sorted tenders based on the search query
+    const results = sortedTenders.filter(tender =>
+      tender?.owner?.toLowerCase().includes(search.toLowerCase()) ||
+      tender?.address?.toLowerCase().includes(search.toLowerCase())
+    );
     setFilteredTenders(results);
   }, [search, tenders]);
 
