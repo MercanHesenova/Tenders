@@ -10,13 +10,14 @@ import '../assets/tenderCreate.css';
 const TenderCreate = () => {
   const { data, setData, tendersUrl } = useContext(Context); // Context-dən data və setData əldə edirik
 
-  const tenderSubmit = async (values) => {
+  const tenderSubmit = async (values,{resetForm}) => {
     try {
       const isSubject = data.some(tender => tender.subject === values.subject);
       if (!isSubject) {
         await axios.post(tendersUrl, values);
         setData([...data, values]); // Yeni tendəri `Context`-ə əlavə edirik
         toast.success("Tender successfully added!")
+        resetForm()
       } else {
         toast.error("Tender with this subject already exists.");
       }
@@ -122,7 +123,7 @@ const TenderCreate = () => {
             />
             {errors.estimatedCost && <div className='errors'>{errors.estimatedCost}</div>}
           </div>
-          <button type="submit">Send</button>
+          <button type="submit" className='closeBtn'>Send</button>
         </form>
       </div>
     </div>
