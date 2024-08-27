@@ -227,7 +227,7 @@ form .modalBtn {
     text-align: center;
 }
 
-.modal button {
+.modalBtn {
     height: 40px;
     width: 70%;
     outline: none;
@@ -240,7 +240,7 @@ form .modalBtn {
     cursor: pointer;
     margin-top: 20px;
     margin-left: 50px;
-} */
+} 
 
 .modalBtn:hover {
     background: linear-gradient(-135deg, #003580, #00a6ff);
