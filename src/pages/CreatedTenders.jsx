@@ -7,54 +7,56 @@ import '../assets/createdTender.css';
 
 const CreatedTenders = () => {
     const { data: createdTenders, updateTender, deleteTender } = useContext(Context);
-    const [show, setShow] = useState(false);
-    const [editTender, setEditTender] = useState(null);
-    const [updatedTender, setUpdatedTender] = useState({});
-    const [deleteModal, setDeleteModal] = useState(false);
-    const [deleteId, setDeleteId] = useState(null)
-    const [filteredTender, setFilteredTender] = useState([])
+    const [showEditModal, setShowEditModal] = useState(false);
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [modalData, setModalData] = useState({});
 
-    const email = localStorage.getItem("signupData")
-    const parsedData = JSON.parse(email)
-    const dataEmail = parsedData.map(item => item.email).join(" ")
+    const currentUserEmail = JSON.parse(localStorage.getItem("currentUser")).email;
 
-    useEffect(() => {
-        const filteredDataInEmail = createdTenders.filter(tender => tender?.email == dataEmail)
-        setFilteredTender(filteredDataInEmail)
-    }, [createdTenders,email])
-    const handleClose = () => setShow(false);
-    const handleDeleteModalClose = () => setDeleteModal(false);
-    const handleShow = (tender) => {
-        setEditTender(tender);
-        setUpdatedTender(tender);
-        setShow(true);
+    const filteredTender = createdTenders.filter(tender => tender?.email === currentUserEmail);
+
+    const handleEditModalShow = (tender) => {
+        setModalData({ ...tender });
+        setShowEditModal(true);
     };
+
+    const handleEditModalClose = () => {
+        setShowEditModal(false);
+        setModalData({});
+    };
+
     const handleDeleteModalShow = (id) => {
-        setDeleteId(id);
-        setDeleteModal(true);
+        setModalData({ id });
+        setShowDeleteModal(true);
     };
-    const inputChange = (e) => {
+
+    const handleDeleteModalClose = () => {
+        setShowDeleteModal(false);
+        setModalData({});
+    };
+
+    const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setUpdatedTender({ ...updatedTender, [name]: value });
+        setModalData({ ...modalData, [name]: value });
     };
 
     const handleUpdateTender = async () => {
-        if (editTender) {
-            await updateTender(editTender.id, updatedTender);
-            handleClose();
+        if (modalData.id) {
+            await updateTender(modalData.id, modalData);
+            handleEditModalClose();
         }
     };
 
     const handleDeleteTender = async () => {
-        if (deleteId) {
-            await deleteTender(deleteId);
-            setDeleteModal(false);
+        if (modalData.id) {
+            await deleteTender(modalData.id);
+            handleDeleteModalClose();
         }
     };
 
     return (
         <>
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={showEditModal} onHide={handleEditModalClose}>
                 <Modal.Header style={{ justifyContent: "center" }}>
                     <Modal.Title>Edit Tender</Modal.Title>
                 </Modal.Header>
@@ -65,8 +67,8 @@ const CreatedTenders = () => {
                             <Form.Control
                                 type="text"
                                 name="owner"
-                                value={updatedTender.owner || ''}
-                                onChange={inputChange}
+                                value={modalData.owner || ''}
+                                onChange={handleInputChange}
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -74,8 +76,8 @@ const CreatedTenders = () => {
                             <Form.Control
                                 type="text"
                                 name="subject"
-                                value={updatedTender.subject || ''}
-                                onChange={inputChange}
+                                value={modalData.subject || ''}
+                                onChange={handleInputChange}
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -83,8 +85,8 @@ const CreatedTenders = () => {
                             <Form.Control
                                 type="text"
                                 name="address"
-                                value={updatedTender.address || ''}
-                                onChange={inputChange}
+                                value={modalData.address || ''}
+                                onChange={handleInputChange}
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -92,8 +94,8 @@ const CreatedTenders = () => {
                             <Form.Control
                                 type="text"
                                 name="estimatedCost"
-                                value={updatedTender.estimatedCost || ''}
-                                onChange={inputChange}
+                                value={modalData.estimatedCost || ''}
+                                onChange={handleInputChange}
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -101,14 +103,14 @@ const CreatedTenders = () => {
                             <Form.Control
                                 type="date"
                                 name="endDate"
-                                value={updatedTender.endDate || ''}
-                                onChange={inputChange}
+                                value={modalData.endDate || ''}
+                                onChange={handleInputChange}
                             />
                         </Form.Group>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button style={{ margin: "0 auto" }} variant="secondary" onClick={handleClose}>
+                    <Button style={{ margin: "0 auto" }} variant="secondary" onClick={handleEditModalClose}>
                         Close
                     </Button>
                     <Button style={{ margin: "0 auto", marginTop: "10px" }} variant="primary" onClick={handleUpdateTender}>
@@ -116,7 +118,7 @@ const CreatedTenders = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <Modal show={deleteModal} onHide={handleDeleteModalClose}>
+            <Modal show={showDeleteModal} onHide={handleDeleteModalClose}>
                 <Modal.Header style={{ textAlign: "center" }} >
                     <Modal.Title>Are you sure you want to delete this tender?</Modal.Title>
                 </Modal.Header>
@@ -149,7 +151,7 @@ const CreatedTenders = () => {
                                 <td>{item?.estimatedCost}</td>
                                 <td>{item?.endDate}</td>
                                 <td>
-                                    <Button variant="outline-primary" className='editButton' onClick={() => handleShow(item)}>Edit</Button>
+                                    <Button variant="outline-primary" className='editButton' onClick={() => handleEditModalShow(item)}>Edit</Button>
                                     <Button variant="outline-danger" onClick={() => handleDeleteModalShow(item?.id)}>Delete</Button>
                                 </td>
                             </tr>
