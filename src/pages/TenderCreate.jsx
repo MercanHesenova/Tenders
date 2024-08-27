@@ -10,7 +10,7 @@ import '../assets/tenderCreate.css';
 const TenderCreate = () => {
   const { data, setData, tendersUrl } = useContext(Context); // Context-dən data və setData əldə edirik
 
-  const tenderSubmit = async (values,{resetForm}) => {
+  const tenderSubmit = async (values, { resetForm }) => {
     try {
       const isSubject = data.some(tender => tender.subject === values.subject);
       if (!isSubject) {
@@ -48,18 +48,22 @@ const TenderCreate = () => {
     onSubmit: tenderSubmit,
     validationSchema: TenderCreateSchema
   });
+  console.log(values.email);
+
+  
   useEffect(() => {
-    const signupData = localStorage.getItem("signupData");
-    if (signupData) {
-      const parsedSignupData = JSON.parse(signupData);
-      const email = parsedSignupData.map(item => item.email).join(" ");
-      if (email) {
-        setFieldValue("email", email);
-      }
+    const currentUser = localStorage.getItem("currentUser");
+    if (currentUser) {
+        const parsedUser = JSON.parse(currentUser);
+        const email = parsedUser.email;
+        if (email) {
+            setFieldValue("email", email);
+        }
     } else {
-      console.log("No signup data found in localStorage.");
+        console.log("No current user data found in localStorage.");
     }
-  }, [setFieldValue]);
+}, [setFieldValue]);
+
 
   return (
     <div className='tenderCreateParent'>

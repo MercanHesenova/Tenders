@@ -44,6 +44,7 @@ const SignIn = () => {
         if (existingUser) {
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('userName', `${existingUser.name} ${existingUser.surname}`);
+            localStorage.setItem('currentUser', JSON.stringify(existingUser));
 
             if (state.rememberMe) {
                 localStorage.setItem('savedEmail', state.email);
@@ -63,6 +64,22 @@ const SignIn = () => {
                 errorMessage: 'User not found or incorrect password'
             }));
         }
+    };
+
+    useEffect(() => {
+        const currentUser = localStorage.getItem('currentUser');
+        if (currentUser) {
+            const parsedUser = JSON.parse(currentUser);
+            setState(prevState => ({
+                ...prevState,
+                email: parsedUser.email
+            }));
+        }
+    }, []);
+    const handleLogout = () => {
+        localStorage.removeItem('currentUser');
+        localStorage.removeItem('isLoggedIn');
+        window.location.href = '/sign-in'; // Çıkıştan sonra yönlendirme
     };
 
     const handleForgotPassword = (event) => {

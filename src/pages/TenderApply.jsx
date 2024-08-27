@@ -9,7 +9,7 @@ import axios from 'axios';
 const TenderApply = () => {
   const { applyUrl, setData, data, dataApply } = useContext(Context)
 
-  const handleSubmit = async (values,{resetForm}) => {
+  const handleSubmit = async (values, { resetForm }) => {
     try {
       const response = axios.post(applyUrl, values)
       setData([...data, response.data])
@@ -34,17 +34,19 @@ const TenderApply = () => {
     validationSchema: ApplyTenderSchema
   });
   useEffect(() => {
-    const signupData = localStorage.getItem("signupData")
-    if (signupData) {
-      const parsedSignupData = JSON.parse(signupData)
-      const email = parsedSignupData.map(applyEmail => applyEmail.email).join(" ")
+    const currentUser = localStorage.getItem("currentUser")
+    if (currentUser) {
+      const parsedUser = JSON.parse(currentUser)
+      const email = parsedUser.email
       if (email) {
         formik.setFieldValue("email", email)
       }
-      else {
-        console.log("data not found");
+      else{
+        console.log("No current user data found in localStorage.");
+        
       }
     }
+
   }, [formik.setFieldValue])
   return (
     <div className='applyParent'>
