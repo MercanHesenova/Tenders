@@ -5,17 +5,16 @@ import '../assets/createdTender.css';
 const CreatedApply = () => {
     const { dataApply } = useContext(Context)
     const [filterDataApply, setFilterDataApply] = useState([])
-    const email = localStorage.getItem("signupData")
-    const parsed = JSON.parse(email)
-    const applyEmail = parsed.map(item => item.email).join(" ")
+    const currentUserEmail = JSON.parse(localStorage.getItem("currentUser")).email
+
     useEffect(() => {
-        const filteredApplyData = dataApply.filter(item => item?.email == applyEmail)
-        setFilterDataApply(filteredApplyData)
-    }, [dataApply, email])
+        const filteredApplications = dataApply.filter(application => application.email === currentUserEmail);
+        setFilterDataApply(filteredApplications);
+    }, [dataApply, currentUserEmail]);
     return (
         <div className='container'>
             <Table striped bordered hover responsive className="tenderTable">
-                <thead className='tenderHead'>
+                <thead className='tenderHead'> 
                     <tr>
                         <th>Company Name</th>
                         <th>Company Work</th>

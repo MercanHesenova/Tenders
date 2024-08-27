@@ -56,8 +56,10 @@
     position: absolute; 
     top: 6px; 
     right: 20px;
-    font-size: 20px; 
+    font-size: 20px;
+    transition: background 0.3s ease;
 }
+
 
 .wrapper .remember-forgot{
     display: flex;
@@ -205,6 +207,17 @@ form .loginBtn{
     border-bottom-width: 2px;
 }
 
+.modalIconBtn{
+    background: none; 
+    border: none; 
+    cursor: pointer;
+    position: absolute; 
+    top: 17px; 
+    right: 20px;
+    font-size: 20px; 
+    transition: background 0.3s ease;
+}
+
 .modal input:focus {
     border-color: #007bff;
     outline: none;
@@ -214,7 +227,7 @@ form .modalBtn {
     text-align: center;
 }
 
-/* .modal button {
+.modalBtn {
     height: 40px;
     width: 70%;
     outline: none;
@@ -227,9 +240,9 @@ form .modalBtn {
     cursor: pointer;
     margin-top: 20px;
     margin-left: 50px;
-} */
+} 
 
-.modal button:hover {
+.modalBtn:hover {
     background: linear-gradient(-135deg, #003580, #00a6ff);
 }
 
@@ -245,6 +258,7 @@ form .modalBtn {
     overflow-y: auto;
 }
 
+
 .close {
     position: absolute;
     top: 10px;
@@ -253,8 +267,14 @@ form .modalBtn {
     font-size: 20px;
 }
 
+.error-message {
+    color: red;
+    font-size: 0.875rem; 
+    margin-top: 0.25rem; 
+}
 
-@media (max-width: 584px) {
+
+@media (max-width: 768px) {
     .SignInContainer {
         width: 90%;
         padding: 20px;
@@ -264,18 +284,18 @@ form .modalBtn {
         font-size: 20px;
     }
 
-    .input-box input {
+    .inputBoxSignIn input {
         font-size: 14px;
     }
 
     .loginBtn button,
-    .modal button {
+    .modalBtn {
         width: 100%;
         font-size: 16px;
     }
 
     .modal-content {
-        width: 90%;
+        width: 95%;
         padding: 15px;
         max-height: 80%;
     }
@@ -288,6 +308,11 @@ form .modalBtn {
         margin-left: 0;
     }
 
+    .modalIconBtn {
+        top: 10px;
+        right: 10px;
+    }
+
     .remember-forgot {
         flex-direction: column;
         align-items: flex-start;
@@ -295,5 +320,43 @@ form .modalBtn {
 
     .remember-forgot a {
         margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .SignInContainer {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .SignInContainer h1 {
+        font-size: 18px;
+    }
+
+    .inputBoxSignIn input {
+        font-size: 14px;
+    }
+
+    .loginBtn button,
+    .modalBtn {
+        font-size: 14px;
+    }
+
+    .modal-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .modal h2 {
+        font-size: 18px;
+    }
+
+    .modalBtn {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .modalIconBtn {
+        font-size: 18px;
     }
 }
