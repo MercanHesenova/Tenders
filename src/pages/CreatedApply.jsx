@@ -1,7 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react'
+// Main Imports
+import React, { useContext, useEffect, useState } from 'react';
+
+// Library Imports
 import { Table } from 'react-bootstrap';
+
+// Custom Imports
 import { Context } from '../context/Context';
+
+// Asset Imports
 import '../assets/createdTender.css';
+
 const CreatedApply = () => {
     const { dataApply } = useContext(Context)
     const [filterDataApply, setFilterDataApply] = useState([])

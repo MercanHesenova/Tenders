@@ -1,143 +1,220 @@
 {
   "tenders": [
     {
-      "id": "7cc5",
-      "owner": "Marcanffeexxddaf",
-      "subject": "fffaaaaaaf",
-      "endDate": "2024-08-23",
-      "address": "asd",
-      "estimatedCost": 34997,
-      "createdDate": "14/08/2024"
-    },
-    {
-      "id": "c572",
-      "owner": "sadfdf",
-      "subject": "dsfsdfdsfc",
-      "endDate": "2024-08-23",
-      "address": "dcfdsvfvfv",
-      "estimatedCost": 56000,
-      "createdDate": "15/08/2024"
-    },
-    {
-      "id": "0264",
-      "owner": "MMC Company",
-      "subject": "Torpaq məcralı \"Pirvahid\" kanalının beton üzlüyə (PK00+00 ÷ PK12+00, L=1,2 km) alınması və üzərindəki qurğularla birlikdə əsaslı təmiri",
+      "id": "fe34",
+      "owner": "NAXÇIVAN MUXTAR RESPUBLİKASI QAZ İSTİSMAR XİDMƏTİ",
+      "subject": "Qaz tikinti quraşdırma materialları və avadanlıqlarının satınalınması",
       "endDate": "2024-09-08",
-      "address": "Quba şəhəri 30 kvartal",
-      "estimatedCost": 168000,
-      "createdDate": "16/08/2024"
-    },
-    {
-      "id": "4439",
-      "owner": "asaDAS",
-      "subject": "SDASD",
-      "endDate": "2024-08-31",
-      "address": "asdasf",
-      "estimatedCost": 1324234,
-      "createdDate": "20/08/2024"
-    },
-    {
-      "id": "6fa7",
-      "owner": "aaaaa",
-      "subject": "aaaa",
-      "endDate": "2024-08-31",
-      "address": "aaaa",
-      "estimatedCost": 11111,
-      "createdDate": "20/08/2024"
-    },
-    {
-      "id": "ed90",
-      "owner": "aaaccc",
-      "subject": "ccccc",
-      "endDate": "2024-09-08",
-      "address": "ccccc",
-      "estimatedCost": 11111,
-      "email": "huseynliemin68@gmail.com",
-      "createdDate": "23/08/2024"
-    },
-    {
-      "id": "07e1",
-      "owner": "aaaa",
-      "subject": "dasdasf",
-      "endDate": "2024-08-31",
-      "address": "afadsf",
-      "estimatedCost": 32532,
-      "email": "huseynliemin68@gmail.com ee@eee.com",
-      "createdDate": "24/08/2024"
-    },
-    {
-      "id": "8009",
-      "owner": "asdfsdaf",
-      "subject": "gdsgfsd",
-      "endDate": "2024-08-31",
-      "address": "afadsf",
-      "estimatedCost": 32532,
-      "email": "huseynliemin68@gmail.com ee@eee.com",
-      "createdDate": "24/08/2024"
-    },
-    {
-      "id": "a801",
-      "owner": "Marcanss",
-      "subject": "sssssssss",
-      "endDate": "2024-09-07",
-      "address": "Quba şəhəri 30 kvartal",
-      "estimatedCost": 234444,
+      "address": " NAXÇIVAN ŞƏHƏRİ NƏSRƏDDİN TUSİ 7",
+      "estimatedCost": 992504,
       "email": "mercanhesenova16@gmail.com",
       "createdDate": "27/08/2024"
+    },
+    {
+      "id": "7162",
+      "owner": "\"DÖVLƏT MƏŞĞULLUQ AGENTLİYİ\" PUBLİK HÜQUQİ ŞƏXSİ",
+      "subject": "Peşələr festivalının təşkili xidmətinin satın alınması",
+      "endDate": "2024-09-18",
+      "address": "AZ 1009, Bakı şəhəri, Salatın Əsgərova küçəsi, 85",
+      "estimatedCost": 555862,
+      "email": "mercanhesenova16@gmail.com",
+      "createdDate": "27/08/2024"
+    },
+    {
+      "id": "1fff",
+      "owner": "\"NAXÇIVAN YOL TƏCHİZAT\"MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ",
+      "subject": "Naxçıvan şəhəri Babək məhəlləsi-Hacıniyyət kəndi-6-cı məhəllədə-Qaraçuq inzibati -Ərazi Dairəsi, S.Vurğun-N.Naxçıvani-M.H.Şəhriyar-H.Rəhmanov-58-ci məhəllə-61-ci məhəllə Xətai məhəlləsi küçələri və Culfa rayon Yaycı kənd daxili avtomobil yollarının əsaslı təmiri",
+      "endDate": "2024-10-09",
+      "address": "Naxçıvan şəhəri Azərbaycan küçəsi №57",
+      "estimatedCost": 17043358,
+      "email": "mercanhesenova16@gmail.com",
+      "createdDate": "27/08/2024"
+    },
+    {
+      "id": "c827",
+      "owner": "\"SU VƏ MELİORASİYA ELMİ TƏDQİQAT İNSTİTUTU\" PUBLİK HÜQUQİ ŞƏXSİ",
+      "subject": "Mikroavtobusun və sedan tipli nəqliyyat vasitələrinin satın alınması",
+      "endDate": "2024-09-25",
+      "address": "AZ1108, BAKI ŞƏHƏRİ BİNƏQƏDİ RAYONU, İBRAHİMPAŞA DADAŞOV, ev 324",
+      "estimatedCost": 283825,
+      "email": "mercanhesenova16@gmail.com",
+      "createdDate": "27/08/2024"
+    },
+    {
+      "id": "1297",
+      "owner": "\"DAYANIQLI VƏ OPERATİV SOSİAL TƏMİNAT AGENTLİYİ\" PUBLİK HÜQUQİ ŞƏXSİ",
+      "subject": "Dayanıqlı və Operativ Sosial Təminat Agentliyi tərəfindən Quba DOST və Peşə hazırlığı mərkəzi üçün müxtəlif texnoloji avadanlıqların satın alınması",
+      "endDate": "2024-09-25",
+      "address": "Bakı ş., İ.Qutqaşınlı 86.",
+      "estimatedCost": 826670,
+      "email": "mercanhesenova16@gmail.com",
+      "createdDate": "27/08/2024"
+    },
+    {
+      "id": "7189",
+      "owner": "\"DÖVLƏT TİBBİ-SOSİAL EKSPERTİZA VƏ REABİLİTASİYA AGENTLİYİ\" PUBLİK HÜQUQİ ŞƏXSİ",
+      "subject": "Biləcəri qəsəbəsində Yeni inşa olunacaq Tibbi Qiymətləndirmə Mərkəzi, Tibbi-Sosial Ekspertiza Mərkəzi, Reabilitasiya Mərkəzi, İdman-sağlamlıq kompleksi və İnzibati binanın layihələndirmə işlərinin satınalınması",
+      "endDate": "2024-09-17",
+      "address": "Bakı şəhəri, Yasamal rayonu, Nazim Hikmət 27, 3-cü mərtəbə.",
+      "estimatedCost": 500000,
+      "email": "emin@gmail.com",
+      "createdDate": "27/08/2024"
+    },
+    {
+      "id": "e838",
+      "owner": "NAXÇIVAN MR EKOLOGİYA VƏ TƏBİİ SƏRVƏTLƏR NAZİRLİYİ",
+      "subject": "Təhlükəli tullantılar poliqonu üçün texnikaların satın alınması",
+      "endDate": "2024-09-18",
+      "address": "Naxçıvan",
+      "estimatedCost": 970208,
+      "email": "emin@gmail.com",
+      "createdDate": "27/08/2024"
+    },
+    {
+      "id": "2d6d",
+      "owner": "\"NAXÇIVAN YOL TƏCHİZAT\"MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ",
+      "subject": "Yol nişanlarının və Trampilinlərin satınalınması",
+      "endDate": "2024-09-18",
+      "address": "Naxçıvan şəhəri Azərbaycan küçəsi №57",
+      "estimatedCost": 496054,
+      "email": "emin@gmail.com",
+      "createdDate": "27/08/2024"
+    },
+    {
+      "id": "71ac",
+      "owner": "AZƏRBAYCAN RESPUBLİKASI DÖVLƏT GÖMRÜK KOMİTƏSİ TİBBİ XİDMƏT İDARƏSİNİN MƏRKƏZİ HOSPİTALI",
+      "subject": "Azərbaycan Respublikasının Dövlət Gömrük Komitəsinin Tibbi Xidmət İdarəsinin Mərkəzi Hospitalı tərəfindən Endoskopiya tibbi sərf materiallarının satın alınması",
+      "endDate": "2024-08-26",
+      "address": "Naxçıvan şəhəri Azərbaycan küçəsi №57",
+      "estimatedCost": 496000,
+      "email": "emin@gmail.com",
+      "createdDate": "27/08/2024"
+    },
+    {
+      "id": "688c",
+      "owner": "NAXÇIVAN MR EKOLOGİYA VƏ TƏBİİ SƏRVƏTLƏR NAZİRLİYİ",
+      "subject": "\"Təhlükəli tullantılar poliqonu üçün qurğular\"ın satın alınması",
+      "endDate": "2024-09-18",
+      "address": "Naxçıvan",
+      "estimatedCost": 190340,
+      "email": "emin@gmail.com",
+      "createdDate": "28/08/2024"
+    },
+    {
+      "id": "c8a4",
+      "owner": " \"SƏHİYYƏ MÜƏSSİSƏLƏRİNİN TƏMİNATI MƏRKƏZİ\"PUBLİK HÜQUQİ ŞƏXSİ",
+      "subject": "Tibbi cihaz və kompüter avadanlıqları",
+      "endDate": "2024-09-17",
+      "address": "Naxçıvan, Kazım Talıblı küçəsi",
+      "estimatedCost": 4996200,
+      "email": "emin@gmail.com",
+      "createdDate": "28/08/2024"
+    },
+    {
+      "id": "2d7a",
+      "owner": "NAXÇIVAN ŞƏHƏR İSTİLİK TƏSƏRRÜFATI İDARƏSİ",
+      "subject": "İstilik qazanları, ehtiyat hissələri və mal-materialın satınalınması",
+      "endDate": "2024-09-19",
+      "address": "Xətai məhəlləsi 4/40",
+      "estimatedCost": 288177,
+      "email": "eliza@gmail.com",
+      "createdDate": "28/08/2024"
+    },
+    {
+      "id": "f0f0",
+      "owner": "BİLƏSUVAR RAYON İCRA HAKİMİYYƏTİ",
+      "subject": "Biləsuvar şəhəri ərazisində avtomobil yollarının əsaslı təmiri işləri (büdcə vəsaiti hesabına)",
+      "endDate": "2024-10-02",
+      "address": "Mübariz İbrahimov küçəsi-50, Biləsuvar, Azərbaycan",
+      "estimatedCost": 566900,
+      "email": "eliza@gmail.com",
+      "createdDate": "28/08/2024"
+    },
+    {
+      "id": "7db2",
+      "owner": " \"GƏNCƏ ŞƏHƏR BİRLƏŞMİŞ XƏSTƏXANASI\" PUBLİK HÜQUQİ ŞƏXSİ",
+      "subject": "Gəncə şəhər Birləşmiş Xəstəxanası Z.Məmmədov adına xəstəxanada əsaslı təmir işlərinin satın alınması",
+      "endDate": "2024-09-24",
+      "address": "Gəncə şəhəri Nizami prospekti 412",
+      "estimatedCost": 2079412,
+      "email": "eliza@gmail.com",
+      "createdDate": "28/08/2024"
+    },
+    {
+      "id": "4c3e",
+      "owner": "AĞDAM, FÜZULİ VƏ XOCAVƏND RAYONLARINDA BƏRPA,TİKİNTİ VƏ İDARƏETMƏ XİDMƏTİ PUBLİK HÜQUQİ ŞƏXSİ",
+      "subject": "Mədəni, sosial və dövlət əhəmiyyətli tədbirlərin təşkil olunması xidmətlərinin satın alınması",
+      "endDate": "2024-09-17",
+      "address": " Ağdam şəhəri",
+      "estimatedCost": 600698,
+      "email": "eliza@gmail.com",
+      "createdDate": "28/08/2024"
+    },
+    {
+      "id": "802b",
+      "owner": "AZƏRBAYCAN RESPUBLİKASININ MƏRKƏZİ BANKI",
+      "subject": "Mərkəzi Bank əməkdaşlarının tibbi sığortalanması xidmətininsatın alınması",
+      "endDate": "2024-09-18",
+      "address": "AZ1014, Bakı şəhəri, Rəşid Behbudov küçəsi, 90",
+      "estimatedCost": 977630,
+      "email": "eliza@gmail.com",
+      "createdDate": "28/08/2024"
     }
   ],
   "apply": [
     {
-      "id": "40db",
-      "owner": "safdas",
-      "subject": "safasdf",
-      "endDate": "2024-09-07",
-      "address": "dasdas3",
-      "estimatedCost": 123432,
-      "email": "huseynliemin68@gmail.com",
-      "createdDate": "26/08/2024"
-    },
-    {
-      "id": "0251",
-      "owner": "vcx",
-      "subject": "cxcx",
-      "endDate": "2024-08-29",
-      "address": "cxcxzz",
-      "estimatedCost": 4321,
-      "email": "huseynliemin68@gmail.com",
-      "createdDate": "27/08/2024"
-    },
-    {
-      "id": "9b84",
-      "owner": "emin",
-      "subject": "eeee",
-      "endDate": "2024-08-31",
-      "address": "regfsdg",
-      "estimatedCost": 3454,
-      "email": "huseynliemin68@gmail.com",
-      "createdDate": "27/08/2024"
-    },
-    {
-      "id": "c110",
-      "companyName": "asdfgh",
-      "companyWork": "aaaaaaa",
-      "teamInfo": "aaaaaaaaaaa",
+      "id": "0ea8",
+      "companyName": "Eliza",
+      "companyWork": "test1",
+      "teamInfo": "test1",
       "companyFile": "",
-      "email": ""
+      "email": "emin@gmail.com"
     },
     {
-      "id": "a916",
-      "companyName": "slbfvhdjsklxd",
-      "companyWork": "dddddddddd",
-      "teamInfo": "ddddd",
+      "id": "4084",
+      "companyName": "Emin",
+      "companyWork": "test2",
+      "teamInfo": "test2",
       "companyFile": "",
-      "email": ""
+      "email": "emin@gmail.com"
     },
     {
-      "id": "26e5",
-      "companyName": "Marcannn",
-      "companyWork": "efkerf",
-      "teamInfo": "rferfregr",
+      "id": "b466",
+      "companyName": "Marcan",
+      "companyWork": "test3",
+      "teamInfo": "test3",
+      "companyFile": "",
+      "email": "emin@gmail.com"
+    },
+    {
+      "id": "ef5c",
+      "companyName": "Marcan",
+      "companyWork": "test1",
+      "teamInfo": "test1",
+      "companyFile": "",
+      "email": "eliza@gmail.com"
+    },
+    {
+      "id": "5e9a",
+      "companyName": "mərcan",
+      "companyWork": "test2",
+      "teamInfo": "test2",
+      "companyFile": "",
+      "email": "mercanhesenova16@gmail.com"
+    },
+    {
+      "id": "9256",
+      "companyName": "mercan",
+      "companyWork": "test3",
+      "teamInfo": "test3",
+      "companyFile": "",
+      "email": "mercanhesenova16@gmail.com"
+    },
+    {
+      "id": "4056",
+      "companyName": "eliza",
+      "companyWork": "test1",
+      "teamInfo": "test1",
       "companyFile": "",
       "email": "mercanhesenova16@gmail.com"
     }

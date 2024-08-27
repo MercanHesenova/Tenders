@@ -1,8 +1,15 @@
+// Main Imports
 import React, { useContext, useEffect, useState } from 'react';
+
+// Library Imports
 import { Table, Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+
+// Custom Imports
 import { Context } from '../context/Context';
+
+// Asset Imports
 import '../assets/createdTender.css';
 
 const CreatedTenders = () => {

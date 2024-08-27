@@ -1,10 +1,17 @@
+// Main Imports
 import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { useFormik } from 'formik';
+
+// Custom Imports
 import { TenderCreateSchema } from '../components/TenderCreateSchema';
 import { Context } from '../context/Context';
+
+// Library Imports
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+// Asset Imports
 import '../assets/tenderCreate.css';
 
 const TenderCreate = () => {

@@ -1,12 +1,17 @@
-
+// Main Imports
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+// Library Imports
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import '../assets/signIn.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+
+// Asset Imports
+import '../assets/signIn.css';
+
 
 const SignIn = () => {
     const [state, setState] = useState({
