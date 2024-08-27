@@ -127,7 +127,7 @@ const TenderCreate = () => {
             />
             {errors.estimatedCost && <div className='errors'>{errors.estimatedCost}</div>}
           </div>
-          <button type="submit">Send</button>
+          <button type="submit" className='closeBtn'>Send</button>
         </form>
       </div>
     </div>

@@ -110,12 +110,13 @@ const CreatedTenders = () => {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button style={{ margin: "0 auto" }} variant="secondary" onClick={handleEditModalClose}>
-                        Close
-                    </Button>
-                    <Button style={{ margin: "0 auto", marginTop: "10px" }} variant="primary" onClick={handleUpdateTender}>
+                  
+                    <button style={{ margin: "0 auto", marginTop: "10px" }} variant="primary" onClick={handleUpdateTender}>
                         Save Changes
-                    </Button>
+                    </button>
+                    <button style={{ margin: "0 auto", marginTop: "10px" }} className='closeBtn' variant="secondary" onClick={handleDeleteModalClose}>
+                        Close
+                    </button>
                 </Modal.Footer>
             </Modal>
             <Modal show={showDeleteModal} onHide={handleDeleteModalClose}>
@@ -123,12 +124,12 @@ const CreatedTenders = () => {
                     <Modal.Title>Are you sure you want to delete this tender?</Modal.Title>
                 </Modal.Header>
                 <Modal.Footer>
-                    <Button style={{ margin: "0 auto" }} variant="secondary" onClick={handleDeleteModalClose}>
-                        Cancel
-                    </Button>
-                    <Button style={{ margin: "0 auto", marginTop: "10px" }} variant="danger" onClick={handleDeleteTender}>
+                    <button style={{ margin: "0 auto" }} variant="danger" onClick={handleDeleteTender} className='deleteBtn'>
                         Delete
-                    </Button>
+                    </button>
+                    <button style={{ margin: "0 auto", marginTop: "10px" }} variant="secondary" onClick={handleDeleteModalClose} className='closeBtn'>
+                        Close
+                    </button>
                 </Modal.Footer>
             </Modal>
             <div className='container'>

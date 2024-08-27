@@ -1,6 +1,6 @@
 .tenderTable {
     margin: 20px 0;
-    border-radius: 100px !important  ;
+    border-radius: 100px !important;
 }
 
 .tenderHead th {
@@ -26,6 +26,57 @@
     margin: 5px 0;
 }
 
+.deleteBtn {
+    height: 40px;
+    width: 70%;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 50px;
+    background: linear-gradient(-135deg, #80000e, #ff0015) ;
+}
+
+.deleteBtn:hover {
+
+    background: linear-gradient(135deg, #80000e, #ff0015) ;
+}
+
+.editBtn {
+    height: 40px;
+    width: 70%;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(-135deg, #008060, #4bd0a4) ;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.editBtn:hover {
+    background: linear-gradient(135deg, #008060, #4bd0a4) ;
+}
+
+.closeBtn {
+    height: 40px;
+    width: 70%;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    background: linear-gradient(135deg, #003580, #00a6ff);
+}
 
 .modalİnput input {
     width: 100%;

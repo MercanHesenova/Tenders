@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import '../assets/signIn.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const SignIn = () => {
 
@@ -12,7 +15,11 @@ const SignIn = () => {
         rememberMe: false,
         isModalOpen: false,
         modalEmail: '',
-        showPassword: false
+        newPassword: '',
+        confirmPassword: '',
+        showPassword: false,
+        showConfirmPassword: false,
+        modalErrorMessage: ''
     })
 
     useEffect(() => {
@@ -89,23 +96,46 @@ const SignIn = () => {
         const user = storedUsers.find(user => user.email == state.modalEmail);
 
         if (user) {
-            alert(`Password reset link sent to ${state.modalEmail}`);
-        } else {
-            alert('Email not found');
-        }
+            if (state.newPassword == state.confirmPassword) {
 
-        setState(prevState => ({
-            ...prevState,
-            modalEmail: '',
-            isModalOpen: false
-        }));
+                user.password = state.newPassword;
+
+
+                localStorage.setItem('signupData', JSON.stringify(storedUsers));
+                toast.success(`Password successfully reset for ${state.modalEmail}`);
+
+                setState(prevState => ({
+                    ...prevState,
+                    password: '',
+                    modalEmail: '',
+                    newPassword: '',
+                    confirmPassword: '',
+                    // isModalOpen: false,
+                    modalErrorMessage: ''
+                }));
+
+            } else {
+                setState(prevState => ({
+                    ...prevState,
+                    modalErrorMessage: 'Passwords must match' 
+                }));
+            }
+        } else {
+            setState(prevState => ({
+                ...prevState,
+                modalErrorMessage: 'Email not found'
+            }));
+        }
     };
 
     const handleCloseModal = () => {
         setState(prevState => ({
             ...prevState,
             modalEmail: '',
-            isModalOpen: false
+            newPassword: '',
+            confirmPassword: '',
+            isModalOpen: false,
+            modalErrorMessage: ''
         }));
     };
 
@@ -127,6 +157,13 @@ const SignIn = () => {
         setState(prevState => ({
             ...prevState,
             showPassword: !prevState.showPassword
+        }));
+    };
+
+    const toggleConfirmPasswordVisibility = () => {
+        setState(prevState => ({
+            ...prevState,
+            showConfirmPassword: !prevState.showConfirmPassword
         }));
     };
 
@@ -172,13 +209,53 @@ const SignIn = () => {
                     <span className='close' onClick={handleCloseModal}>&times;</span>
                     <h2>Password Reset</h2>
                     <form onSubmit={handleModalSubmit}>
-                        <input type="email" placeholder="Enter your email" value={state.modalEmail} onChange={handleChange('modalEmail')} required />
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            value={state.modalEmail}
+                            onChange={handleChange('modalEmail')}
+                            required
+                        />
+                        <div className='inputBoxSignIn'>
+                            <input
+                                type={state.showPassword ? 'text' : 'password'}
+                                placeholder="New Password"
+                                value={state.newPassword}
+                                onChange={handleChange('newPassword')}
+                                required
+                            />
+                            <button type="button" onClick={togglePasswordVisibility} className='modalIconBtn'>
+                                {state.showPassword ? <IoMdEye /> : <IoMdEyeOff />}
+                            </button>
+                        </div>
+
+                        <div className='inputBoxSignIn'>
+                            <input
+                                type={state.showConfirmPassword ? 'text' : 'password'}
+                                placeholder="Confirm New Password"
+                                value={state.confirmPassword}
+                                onChange={handleChange('confirmPassword')}
+                                required
+                            />
+                            <button type="button" onClick={toggleConfirmPasswordVisibility} className='modalIconBtn'>
+                                {state.showConfirmPassword ? <IoMdEye /> : <IoMdEyeOff />}
+                            </button>
+                        </div>
+                        {state.modalErrorMessage && <p style={{ color: 'red', textAlign: 'center' }}>{state.modalErrorMessage}</p>}
                         <button type="submit" className='modalBtn'>Send</button>
                     </form>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
 
 export default SignIn;
+
+
+
+
+
+
+
