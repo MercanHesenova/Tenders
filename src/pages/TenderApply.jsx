@@ -9,11 +9,12 @@ import axios from 'axios';
 const TenderApply = () => {
   const { applyUrl, setData, data, dataApply } = useContext(Context)
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values,{resetForm}) => {
     try {
       const response = axios.post(applyUrl, values)
       setData([...data, response.data])
       toast.success("Apply successfully added!")
+      resetForm()
     } catch (error) {
       toast.error("An error occurred while adding the apply.");
       console.log(error);
@@ -40,7 +41,7 @@ const TenderApply = () => {
       if (email) {
         formik.setFieldValue("email", email)
       }
-      else{
+      else {
         console.log("data not found");
       }
     }
