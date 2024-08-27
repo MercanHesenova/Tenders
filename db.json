@@ -79,6 +79,26 @@
       "estimatedCost": 32532,
       "email": "huseynliemin68@gmail.com ee@eee.com",
       "createdDate": "24/08/2024"
+    },
+    {
+      "id": "7ad1",
+      "owner": "Marcan",
+      "subject": "1 sualda tam düzgün, dolğun cavab götürülməmişdir",
+      "endDate": "2024-09-07",
+      "address": "Fuzuli",
+      "estimatedCost": 50000,
+      "email": "mercanhesenova16@gmail.com",
+      "createdDate": "27/08/2024"
+    },
+    {
+      "id": "140c",
+      "owner": "Marcanfff",
+      "subject": "50-ci sualda bir neçə düzgün cavab vardı",
+      "endDate": "2024-08-31",
+      "address": "Quba şəhəri 30 kvartal",
+      "estimatedCost": 23444,
+      "email": "mercanhesenova16@gmail.com emin@gmail.com",
+      "createdDate": "27/08/2024"
     }
   ],
   "apply": [
@@ -111,6 +131,22 @@
       "estimatedCost": 65445,
       "email": "huseynliemin68@gmail.com",
       "createdDate": "27/08/2024"
+    },
+    {
+      "id": "47cb",
+      "companyName": "asdfgh",
+      "companyWork": "adsfgthygjui",
+      "teamInfo": "fgthyj",
+      "companyFile": "",
+      "email": "mercanhesenova16@gmail.com emin@gmail.com"
+    },
+    {
+      "id": "7d06",
+      "companyName": "slbfvhdjsklxd",
+      "companyWork": "sxcdvklfjdlf",
+      "teamInfo": "sd[giuhdfl",
+      "companyFile": "",
+      "email": "mercanhesenova16@gmail.com emin@gmail.com"
     }
   ]
 }
