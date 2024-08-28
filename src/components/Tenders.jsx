@@ -11,7 +11,7 @@ import Tender from './Tender';
 import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
 
 const Tenders = () => {
-  const { data: tenders } = useContext(Context); // data obyektini kontekstdən çəkirik
+  const { data: tenders } = useContext(Context); 
   const [search, setSearch] = useState('');
   const [filteredTenders, setFilteredTenders] = useState([]);
 
@@ -21,15 +21,15 @@ const Tenders = () => {
   useEffect(() => {
     const parseDate = (dateStr) => {
       const [day, month, year] = dateStr.split('/').map(Number);
-      return new Date(year, month - 1, day); // month is 0-based
+      return new Date(year, month - 1, day); 
     };
 
-    // First, sort tenders by createdDate in descending order (most recent first)
+    
     const sortedTenders = Array.isArray(tenders)
       ? tenders.sort((a, b) => parseDate(b.createdDate) - parseDate(a.createdDate))
       : [];
 
-    // Then, filter the sorted tenders based on the search query
+    
     const results = sortedTenders.filter(tender =>
       tender?.owner?.toLowerCase().includes(search.toLowerCase()) ||
       tender?.address?.toLowerCase().includes(search.toLowerCase())
