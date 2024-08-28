@@ -15,14 +15,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../assets/tenderCreate.css';
 
 const TenderCreate = () => {
-  const { data, setData, tendersUrl } = useContext(Context); // Context-dən data və setData əldə edirik
+  const { data, setData, tendersUrl } = useContext(Context); 
 
   const tenderSubmit = async (values, { resetForm }) => {
     try {
       const isSubject = data.some(tender => tender.subject === values.subject);
       if (!isSubject) {
         await axios.post(tendersUrl, values);
-        setData([...data, values]); // Yeni tendəri `Context`-ə əlavə edirik
+        setData([...data, values]); 
         toast.success("Tender successfully added!")
         resetForm()
       } else {

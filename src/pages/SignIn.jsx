@@ -81,11 +81,6 @@ const SignIn = () => {
             }));
         }
     }, []);
-    const handleLogout = () => {
-        localStorage.removeItem('currentUser');
-        localStorage.removeItem('isLoggedIn');
-        window.location.href = '/sign-in'; // Çıkıştan sonra yönlendirme
-    };
 
     const handleForgotPassword = (event) => {
         event.preventDefault();
@@ -132,8 +127,6 @@ const SignIn = () => {
             }
 
             resetForm();
-            // handleCloseModal();
-
 
         } else {
             setState(prevState => ({

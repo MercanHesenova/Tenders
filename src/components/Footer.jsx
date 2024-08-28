@@ -4,7 +4,6 @@ import React from 'react';
 // Asset Imports
 import '../assets/footer.css';
 
-
 const Footer = () => {
     return (
         <>
